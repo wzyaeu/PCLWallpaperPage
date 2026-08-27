@@ -74,12 +74,12 @@
                                        Margin="4,2"
                                        FontSize="16"
                                        Foreground="{DynamicResource ColorBrush1}"
-                                       Text="{date} {sub-title}"/>
+                                       Text="{date} {title}"/>
                         </Border>
                         <TextBlock TextWrapping="Wrap"
                                    FontSize="40"
                                    Foreground="{DynamicResource ColorBrush8}"
-                                   Text="{title}"/>
+                                   Text="{sub-title}"/>
                         <Grid>
                             <TextBlock TextWrapping="{variable:PCLWallpaperPage-Today-DescWrap:NoWrap}"
                                        FontSize="16"
