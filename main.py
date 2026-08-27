@@ -2,6 +2,8 @@ import os
 import secrets
 import shutil
 import requests
+import json
+from datetime import datetime, timedelta
 
 def load_template(name, noxaml = False):
     print(f'load_template-加载模板文件-{name}')
@@ -23,13 +25,15 @@ def replaces(string: str, s: dict):
         output = output.replace('{'+l+'}', str(d))
     return output
 
-def uninumber(n: int):
-    if n >= 100000000:
-        return '{:.1f}'.format(n/100000000) + '亿'
-    elif n >= 10000:
-        return '{:.1f}'.format(n/10000) + '万'
-    else:
-        return n
+def get_previous_days(date_str, x):
+    date_obj = datetime.strptime(date_str, '%Y-%m-%d').date()
+    
+    result = []
+    for i in range(1, x + 1):
+        prev_date = date_obj - timedelta(days=i)
+        result.append(prev_date.strftime('%Y-%m-%d'))
+    
+    return result
     
 def nlv(s):
     return '\\n'.join(str(s).splitlines())
@@ -50,25 +54,56 @@ def mainpage():
     print('mainpage-加载模板')
     load_template('mainpage')
 
-    print('mainpage-获取api数据')
-    data: dict = requests.get('https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080').json()
     print('mainpage-构建页面')
     output = replaces(templates['mainpage'],{
-        'img':escape_xaml(data['image_url']),
-        'title':escape_xaml(data['title']),
-        'date':escape_xaml(data['date']),
-        'sub-title':escape_xaml(data['subtitle']),
-        'desc':escape_xaml(data['description']),
-        'download_name':escape_xaml(data['date']+'的图片.jpg'),
+        'img':escape_xaml(image_data['image_url']),
+        'img_4k':escape_xaml(image_data['image_url_4k']),
+        'title':escape_xaml(image_data['title']),
+        'date':escape_xaml(image_data['date']),
+        'sub-title':escape_xaml(image_data['headline']),
+        'desc':escape_xaml(image_data['description']),
+        'download_name':escape_xaml(image_data['date']+'的图片.jpg'),
         'gv':BUILD_VERSION
     })
     print('mainpage-保存输出文件')
     save_output_file('Custom.xaml',output)
     save_output_file('Custom.xaml.ini',BUILD_VERSION)
 
+def historypage():
+    print('historypage-开始')
+    print('historypage-加载模板')
+    load_template('historypage')
+    load_template('history_image')
+
+    count = 7
+    output = ''
+    for index, date in enumerate(get_previous_days(image_data['date'], count), start=1):
+        print(f'historypage-构建页面-{index}/{count}')
+        print(f'historypage-获取api数据-{date}')
+        date_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080&date={date}').json()
+        output += replaces(templates['history_image'],{
+            'img':escape_xaml(date_data['image_url']),
+            'img_4k':escape_xaml(date_data['image_url_4k']),
+            'title':escape_xaml(date_data['title']),
+            'date':escape_xaml(date_data['date']),
+            'sub-title':escape_xaml(date_data['headline']),
+            'desc':escape_xaml(date_data['description']),
+            'download_name':escape_xaml(date_data['date']+'的图片.jpg'),
+        })
+    print('historypage-保存输出文件')
+    output = replaces(templates['historypage'],{
+        'image':output
+    })
+    save_output_file('history.xaml',output)
+    save_output_file(f'history.json',json.dumps(
+        {
+            'Title': f'历史画廊'
+        }
+    ,ensure_ascii=False))
+
 def init():
     print('init-初始化中')
-    global OUTPUT_PATH, BASE_PATH, BUILD_VERSION, templates, ncm, test_environment
+    global OUTPUT_PATH, BASE_PATH, BUILD_VERSION, templates, ncm, test_environment, image_data
     templates = {}
     BUILD_VERSION = secrets.token_hex(4)
     BASE_PATH = os.path.dirname(__file__)
@@ -76,7 +111,13 @@ def init():
     shutil.rmtree(OUTPUT_PATH,ignore_errors=True)
     os.makedirs(OUTPUT_PATH,exist_ok=True)
 
+    print('init-获取api数据')
+    image_data = requests.get('https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080').json()
+
     print('init-运行mainpage')
     mainpage()
+
+    print('init-运行historypage')
+    historypage()
 
 init()

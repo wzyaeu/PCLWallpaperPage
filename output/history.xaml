@@ -1,0 +1,804 @@
+<local:MyCard Margin="0,0,0,3">
+    <StackPanel Margin="5"
+                Orientation="Horizontal">
+        <Border Background="{DynamicResource ColorBrush4}"
+                CornerRadius="5">
+            <TextBlock Margin="5,0,5,0"
+                       VerticalAlignment="Center"
+                       FontSize="18"
+                       Foreground="{DynamicResource ColorBrush7}"
+                       Text="Wallpaper 每日一图"/>
+        </Border>
+        <TextBlock Margin="10,3,3,3"
+                   FontWeight="Bold"
+                   FontSize="16"
+                   VerticalAlignment="Center"
+                   Foreground="{DynamicResource ColorBrush3}"
+                   Text="历史画廊"/>
+        <local:MyIconTextButton Margin="2"
+                                Height="35"
+                                VerticalAlignment="Center"
+                                Text="刷新"
+                                EventType="刷新页面"
+                                LogoScale="1"
+                                Logo="M841.140212 512.013257c0 181.498884-147.641328 329.140212-329.140212 329.140212s-329.140212-147.641328-329.140212-329.140212c0-175.391505 137.999348-318.746696 311.068586-328.211305l0 99.641714c0 3.249345 1.749929 6.286578 4.571392 7.928622 1.428103 0.821022 3.000662 1.214162 4.571392 1.214162s3.143289-0.39314 4.571392-1.214162l237.569748-137.141755c2.821463-1.642044 4.571392-4.679277 4.571392-7.928622s-1.749929-6.286578-4.571392-7.928622l-237.569748-137.141755c-2.856206-1.642044-6.286578-1.642044-9.142784 0-2.821463 1.642044-4.571392 4.679277-4.571392 7.928622l0 101.499527C280.537631 120.195606 109.717518 296.300248 109.717518 512.013257c0 221.820389 180.462093 402.282482 402.282482 402.282482s402.282482-180.462093 402.282482-402.282482L841.140212 512.013257z"/>
+    </StackPanel>
+</local:MyCard>
+<local:MyCard Margin="0,5"
+              UseAnimation="False">
+    <Grid>
+        <Border   CornerRadius="4">
+            <Border.Background>
+                <ImageBrush
+                    ImageSource="https://cn.bing.com/th?id=OHR.AurorasIceland_ZH-CN9781322454_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    Stretch="UniformToFill"
+                    AlignmentX="Center"
+                    AlignmentY="Center"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="10"
+                            RenderingBias="Performance"/>
+            </Border.Effect>
+        </Border>
+        <StackPanel>
+            <local:MyImage Margin="3"
+                           VerticalAlignment="Top"
+                           Source="https://cn.bing.com/th?id=OHR.AurorasIceland_ZH-CN9781322454_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+            <Grid VerticalAlignment="Bottom"
+                  Margin="3,0,3,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0"
+                      Margin="10,0">
+                    <Border
+                        CornerRadius="0,0,4,4"
+                        Background="#000000"
+                        Opacity="0.5"
+                        Margin="-5">
+                        <Border.Effect>
+                            <BlurEffect Radius="10"
+                                        RenderingBias="Performance"/>
+                        </Border.Effect>
+                    </Border>
+                    <WrapPanel
+                        Margin="5">
+                        <StackPanel Margin="0,0,5,0">
+                            <Border
+                                Background="{DynamicResource ColorBrush7}"
+                                Margin="0,0,2,0"
+                                CornerRadius="5"
+                                HorizontalAlignment="Left">
+                                <TextBlock TextWrapping="Wrap"
+                                           Margin="4,2"
+                                           FontSize="16"
+                                           Foreground="{DynamicResource ColorBrush1}"
+                                           Text="2026-08-26 流光溢彩的天空"/>
+                            </Border>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="40"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="基尔丘山上空的极光，冰岛"/>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="16"
+                                       Margin="4,0"
+                                       Grid.Column="1"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="随着冰岛的夜晚再次变长，游客很快又会仰望天空，期待一睹北极光。北极光是一种发光现象，当来自太阳的粒子与地球高层大气中的气体相互作用时，便会形成闪烁的绿色、粉色、紫色，有时甚至是红色光带。冰岛地处北方，秋冬季夜晚日益漫长而黑暗，因此成为全球首屈一指的极光观赏地之一。
+
+在这片不断变化的光幕之下，矗立着冰岛最常被拍摄的山峰之一——基尔丘山。它的冰岛语名称意为“教堂山”，源于其酷似教堂的外形。基尔丘山耸立在斯奈山半岛之上，醒目的轮廓和附近的基尔丘瀑布使这里深受摄影师和极光追寻者喜爱。在晴朗的夜晚，山峰、瀑布与天空交相辉映，构成一幅近乎不真实的画面；这一非凡组合已成为冰岛最具标志性的景观之一。"/>
+                        </StackPanel>
+                        <Grid Margin="10,15,10,10"
+                              VerticalAlignment="Top">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Margin="0,5">
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (1080P)"
+                                    ColorType="Highlight"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.AurorasIceland_ZH-CN9781322454_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-26的图片.jpg"/>
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (4K)"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.AurorasIceland_ZH-CN9781322454_UHD.jpg|2026-08-26的图片.jpg"/>
+                            </StackPanel>
+                        </Grid>
+                    </WrapPanel>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</local:MyCard><local:MyCard Margin="0,5"
+              UseAnimation="False">
+    <Grid>
+        <Border   CornerRadius="4">
+            <Border.Background>
+                <ImageBrush
+                    ImageSource="https://cn.bing.com/th?id=OHR.RedwoodPark_ZH-CN9513051062_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    Stretch="UniformToFill"
+                    AlignmentX="Center"
+                    AlignmentY="Center"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="10"
+                            RenderingBias="Performance"/>
+            </Border.Effect>
+        </Border>
+        <StackPanel>
+            <local:MyImage Margin="3"
+                           VerticalAlignment="Top"
+                           Source="https://cn.bing.com/th?id=OHR.RedwoodPark_ZH-CN9513051062_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+            <Grid VerticalAlignment="Bottom"
+                  Margin="3,0,3,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0"
+                      Margin="10,0">
+                    <Border
+                        CornerRadius="0,0,4,4"
+                        Background="#000000"
+                        Opacity="0.5"
+                        Margin="-5">
+                        <Border.Effect>
+                            <BlurEffect Radius="10"
+                                        RenderingBias="Performance"/>
+                        </Border.Effect>
+                    </Border>
+                    <WrapPanel
+                        Margin="5">
+                        <StackPanel Margin="0,0,5,0">
+                            <Border
+                                Background="{DynamicResource ColorBrush7}"
+                                Margin="0,0,2,0"
+                                CornerRadius="5"
+                                HorizontalAlignment="Left">
+                                <TextBlock TextWrapping="Wrap"
+                                           Margin="4,2"
+                                           FontSize="16"
+                                           Foreground="{DynamicResource ColorBrush1}"
+                                           Text="2026-08-25 守护美国瑰宝"/>
+                            </Border>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="40"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="红木国家与州立公园的日出，加利福尼亚州，美国"/>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="16"
+                                       Margin="4,0"
+                                       Grid.Column="1"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="110年来，美国最杰出的户外课堂始终向人们开放，供大家探索。8月25日，美国国家公园管理局迎来其守护美国自然与文化瑰宝一个多世纪的纪念日。1916年，伍德罗·威尔逊总统签署《组织法》使其成为法律，该机构由此成立；如今，它负责管理全美数百座公园、纪念地、海滨和历史遗址。由护林员带领的项目、家庭活动和教育活动邀请游客亲近那些塑造了国家公园体系的景观与故事。
+
+今天的图片展示了加利福尼亚州北部的红木国家与州立公园，阳光照亮了一条蜿蜒穿行于地球上一些最高树木之间的小径。高耸的海岸红杉矗立在由蕨类植物和苔藓组成的葱郁林下植被之上，营造出一片既古老又充满生机的森林。这些林地是一个支撑着多种野生动物和数百年古树的生态系统的一部分，展现了美国国家公园管理局世世代代协助保护的自然奇观，也让游客有机会漫步于这些活着的巨树之下，体验一片独一无二的景观。"/>
+                        </StackPanel>
+                        <Grid Margin="10,15,10,10"
+                              VerticalAlignment="Top">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Margin="0,5">
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (1080P)"
+                                    ColorType="Highlight"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.RedwoodPark_ZH-CN9513051062_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-25的图片.jpg"/>
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (4K)"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.RedwoodPark_ZH-CN9513051062_UHD.jpg|2026-08-25的图片.jpg"/>
+                            </StackPanel>
+                        </Grid>
+                    </WrapPanel>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</local:MyCard><local:MyCard Margin="0,5"
+              UseAnimation="False">
+    <Grid>
+        <Border   CornerRadius="4">
+            <Border.Background>
+                <ImageBrush
+                    ImageSource="https://cn.bing.com/th?id=OHR.BKBridge_ZH-CN3870511222_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    Stretch="UniformToFill"
+                    AlignmentX="Center"
+                    AlignmentY="Center"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="10"
+                            RenderingBias="Performance"/>
+            </Border.Effect>
+        </Border>
+        <StackPanel>
+            <local:MyImage Margin="3"
+                           VerticalAlignment="Top"
+                           Source="https://cn.bing.com/th?id=OHR.BKBridge_ZH-CN3870511222_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+            <Grid VerticalAlignment="Bottom"
+                  Margin="3,0,3,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0"
+                      Margin="10,0">
+                    <Border
+                        CornerRadius="0,0,4,4"
+                        Background="#000000"
+                        Opacity="0.5"
+                        Margin="-5">
+                        <Border.Effect>
+                            <BlurEffect Radius="10"
+                                        RenderingBias="Performance"/>
+                        </Border.Effect>
+                    </Border>
+                    <WrapPanel
+                        Margin="5">
+                        <StackPanel Margin="0,0,5,0">
+                            <Border
+                                Background="{DynamicResource ColorBrush7}"
+                                Margin="0,0,2,0"
+                                CornerRadius="5"
+                                HorizontalAlignment="Left">
+                                <TextBlock TextWrapping="Wrap"
+                                           Margin="4,2"
+                                           FontSize="16"
+                                           Foreground="{DynamicResource ColorBrush1}"
+                                           Text="2026-08-24 跨越历史"/>
+                            </Border>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="40"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="布鲁克林大桥，纽约市，美国"/>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="16"
+                                       Margin="4,0"
+                                       Grid.Column="1"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="布鲁克林大桥连接的不只是曼哈顿和布鲁克林——它还连接着历史、工程学以及几个令人惊讶的故事。大桥历经14年建造，于1883年开放，成为世界上第一座钢丝悬索桥，永久改变了纽约人跨越东河的方式。
+
+这项工程真正称得上是一项全家共同参与的事业。设计师约翰·A·罗布林去世，而他的儿子华盛顿又因病重而无法监督施工后，华盛顿的妻子艾米莉学习了工程学和高等数学，以监督项目的完工。
+
+并非所有人都信任这座新建筑。1884年，演出商P.T.巴纳姆带领21头大象和17峰骆驼走过大桥，以证明它足够坚固。桥内隐藏的拱顶后来曾用于储存葡萄酒和香槟，之后又被用作冷战时期的放射性尘埃避难所；2006年，人们在那里重新发现了被遗忘的应急物资。如今，游隼在大桥的石塔顶部筑巢，证明这座标志性地标仍有许多翱翔高空的居民。有些桥梁就是永不过时。"/>
+                        </StackPanel>
+                        <Grid Margin="10,15,10,10"
+                              VerticalAlignment="Top">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Margin="0,5">
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (1080P)"
+                                    ColorType="Highlight"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.BKBridge_ZH-CN3870511222_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-24的图片.jpg"/>
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (4K)"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.BKBridge_ZH-CN3870511222_UHD.jpg|2026-08-24的图片.jpg"/>
+                            </StackPanel>
+                        </Grid>
+                    </WrapPanel>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</local:MyCard><local:MyCard Margin="0,5"
+              UseAnimation="False">
+    <Grid>
+        <Border   CornerRadius="4">
+            <Border.Background>
+                <ImageBrush
+                    ImageSource="https://cn.bing.com/th?id=OHR.EndofHeatY26_ZH-CN8936468848_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    Stretch="UniformToFill"
+                    AlignmentX="Center"
+                    AlignmentY="Center"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="10"
+                            RenderingBias="Performance"/>
+            </Border.Effect>
+        </Border>
+        <StackPanel>
+            <local:MyImage Margin="3"
+                           VerticalAlignment="Top"
+                           Source="https://cn.bing.com/th?id=OHR.EndofHeatY26_ZH-CN8936468848_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+            <Grid VerticalAlignment="Bottom"
+                  Margin="3,0,3,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0"
+                      Margin="10,0">
+                    <Border
+                        CornerRadius="0,0,4,4"
+                        Background="#000000"
+                        Opacity="0.5"
+                        Margin="-5">
+                        <Border.Effect>
+                            <BlurEffect Radius="10"
+                                        RenderingBias="Performance"/>
+                        </Border.Effect>
+                    </Border>
+                    <WrapPanel
+                        Margin="5">
+                        <StackPanel Margin="0,0,5,0">
+                            <Border
+                                Background="{DynamicResource ColorBrush7}"
+                                Margin="0,0,2,0"
+                                CornerRadius="5"
+                                HorizontalAlignment="Left">
+                                <TextBlock TextWrapping="Wrap"
+                                           Margin="4,2"
+                                           FontSize="16"
+                                           Foreground="{DynamicResource ColorBrush1}"
+                                           Text="2026-08-23 暑气渐消，金秋已至"/>
+                            </Border>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="40"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="在处暑时节的村庄田野与寺庙佛塔，江阴市，江苏省，中国"/>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="16"
+                                       Margin="4,0"
+                                       Grid.Column="1"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="处暑时节将至，航拍视角下的古塔迎着晨雾耸立于渐染秋色的林木之间，生动呈现了暑气消退、金秋将至的自然韵律，以及中国传统文化景观的悠久魅力 。这一时节的传统习俗包括放河灯、迎秋赏景以及饮用中草药煎剂（如凉茶/防暑汤），以调和四季交替时的身体平衡 。"/>
+                        </StackPanel>
+                        <Grid Margin="10,15,10,10"
+                              VerticalAlignment="Top">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Margin="0,5">
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (1080P)"
+                                    ColorType="Highlight"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.EndofHeatY26_ZH-CN8936468848_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-23的图片.jpg"/>
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (4K)"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.EndofHeatY26_ZH-CN8936468848_UHD.jpg|2026-08-23的图片.jpg"/>
+                            </StackPanel>
+                        </Grid>
+                    </WrapPanel>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</local:MyCard><local:MyCard Margin="0,5"
+              UseAnimation="False">
+    <Grid>
+        <Border   CornerRadius="4">
+            <Border.Background>
+                <ImageBrush
+                    ImageSource="https://cn.bing.com/th?id=OHR.CommonBlue_ZH-CN8521430009_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    Stretch="UniformToFill"
+                    AlignmentX="Center"
+                    AlignmentY="Center"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="10"
+                            RenderingBias="Performance"/>
+            </Border.Effect>
+        </Border>
+        <StackPanel>
+            <local:MyImage Margin="3"
+                           VerticalAlignment="Top"
+                           Source="https://cn.bing.com/th?id=OHR.CommonBlue_ZH-CN8521430009_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+            <Grid VerticalAlignment="Bottom"
+                  Margin="3,0,3,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0"
+                      Margin="10,0">
+                    <Border
+                        CornerRadius="0,0,4,4"
+                        Background="#000000"
+                        Opacity="0.5"
+                        Margin="-5">
+                        <Border.Effect>
+                            <BlurEffect Radius="10"
+                                        RenderingBias="Performance"/>
+                        </Border.Effect>
+                    </Border>
+                    <WrapPanel
+                        Margin="5">
+                        <StackPanel Margin="0,0,5,0">
+                            <Border
+                                Background="{DynamicResource ColorBrush7}"
+                                Margin="0,0,2,0"
+                                CornerRadius="5"
+                                HorizontalAlignment="Left">
+                                <TextBlock TextWrapping="Wrap"
+                                           Margin="4,2"
+                                           FontSize="16"
+                                           Foreground="{DynamicResource ColorBrush1}"
+                                           Text="2026-08-22 天蓝色的翅膀"/>
+                            </Border>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="40"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="普通蓝灰蝶，德文郡，英格兰"/>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="16"
+                                       Margin="4,0"
+                                       Grid.Column="1"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="田野中那一抹迅速掠过的蓝色背后，有一个开始得早得多的故事，故事的主角是一只小小的毛毛虫和一种令人惊讶的生存妙招。普通蓝灰蝶分布于欧洲、北非和亚洲部分地区，成虫以花蜜为食。它的生命始于一枚小小的卵，雌蝶通常会将卵产在百脉根等寄主植物上。真正令人惊讶的是它的毛毛虫阶段，此时蚂蚁会在其生存过程中扮演一个出人意料的角色。孵化后，毛毛虫会啃食叶片，然后进入蜕变的下一个阶段。在这一过程中，它会分泌一种名为蜜露的含糖物质，供蚂蚁取食。作为回报，蚂蚁可能会保护结茧的毛毛虫免受捕食者侵害。
+
+成蝶羽化后，雄蝶会展露出赋予这一物种名称的蓝色翅膀。翅膀上的微观结构通过反射光线形成这种颜色。雌蝶的翅膀通常呈棕色，边缘带有橙色斑点。普通蓝灰蝶的生命历程表明，大自然中最小的生灵也有着出人意料的复杂生活。"/>
+                        </StackPanel>
+                        <Grid Margin="10,15,10,10"
+                              VerticalAlignment="Top">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Margin="0,5">
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (1080P)"
+                                    ColorType="Highlight"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.CommonBlue_ZH-CN8521430009_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-22的图片.jpg"/>
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (4K)"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.CommonBlue_ZH-CN8521430009_UHD.jpg|2026-08-22的图片.jpg"/>
+                            </StackPanel>
+                        </Grid>
+                    </WrapPanel>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</local:MyCard><local:MyCard Margin="0,5"
+              UseAnimation="False">
+    <Grid>
+        <Border   CornerRadius="4">
+            <Border.Background>
+                <ImageBrush
+                    ImageSource="https://cn.bing.com/th?id=OHR.JulierPass_ZH-CN3064797820_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    Stretch="UniformToFill"
+                    AlignmentX="Center"
+                    AlignmentY="Center"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="10"
+                            RenderingBias="Performance"/>
+            </Border.Effect>
+        </Border>
+        <StackPanel>
+            <local:MyImage Margin="3"
+                           VerticalAlignment="Top"
+                           Source="https://cn.bing.com/th?id=OHR.JulierPass_ZH-CN3064797820_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+            <Grid VerticalAlignment="Bottom"
+                  Margin="3,0,3,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0"
+                      Margin="10,0">
+                    <Border
+                        CornerRadius="0,0,4,4"
+                        Background="#000000"
+                        Opacity="0.5"
+                        Margin="-5">
+                        <Border.Effect>
+                            <BlurEffect Radius="10"
+                                        RenderingBias="Performance"/>
+                        </Border.Effect>
+                    </Border>
+                    <WrapPanel
+                        Margin="5">
+                        <StackPanel Margin="0,0,5,0">
+                            <Border
+                                Background="{DynamicResource ColorBrush7}"
+                                Margin="0,0,2,0"
+                                CornerRadius="5"
+                                HorizontalAlignment="Left">
+                                <TextBlock TextWrapping="Wrap"
+                                           Margin="4,2"
+                                           FontSize="16"
+                                           Foreground="{DynamicResource ColorBrush1}"
+                                           Text="2026-08-21 攀登在召唤"/>
+                            </Border>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="40"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="尤利尔山口蜿蜒的公路，瑞士"/>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="16"
+                                       Margin="4,0"
+                                       Grid.Column="1"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="有些山路本身就会成为旅行目的地，尤利尔山口正是其中之一。这座瑞士山口海拔高达7,493英尺，近2,000年来一直沿着一条路线连接着阿尔卑斯山的各个山谷。它的故事早在现代交通出现之前便已开始。没有护栏，也没有路面——只有一条供罗马时代的旅行者、商人和信使使用的路线。山顶附近的考古发现，包括无数枚硬币和两根罗马时期的皂石柱，表明这里可能曾有一处供攀越山口的人使用的圣所或歇脚处。
+
+今天图片中所见的公路建于1820年至1828年间。1935年至1940年间，这座山口成为瑞士第一条铺设沥青的阿尔卑斯山公路。如今，每天约有3,000辆车通过尤利尔山口。冬季路况恶劣时，驾驶者可能需要安装防滑链。每一个回头弯都会带来又一番壮丽景色，让这段车程与目的地同样令人难忘。如果钥匙在你手中，你会选择这条风景优美的路线吗？"/>
+                        </StackPanel>
+                        <Grid Margin="10,15,10,10"
+                              VerticalAlignment="Top">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Margin="0,5">
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (1080P)"
+                                    ColorType="Highlight"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.JulierPass_ZH-CN3064797820_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-21的图片.jpg"/>
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (4K)"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.JulierPass_ZH-CN3064797820_UHD.jpg|2026-08-21的图片.jpg"/>
+                            </StackPanel>
+                        </Grid>
+                    </WrapPanel>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</local:MyCard><local:MyCard Margin="0,5"
+              UseAnimation="False">
+    <Grid>
+        <Border   CornerRadius="4">
+            <Border.Background>
+                <ImageBrush
+                    ImageSource="https://cn.bing.com/th?id=OHR.LynnCanalOrca_ZH-CN0719217908_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    Stretch="UniformToFill"
+                    AlignmentX="Center"
+                    AlignmentY="Center"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="10"
+                            RenderingBias="Performance"/>
+            </Border.Effect>
+        </Border>
+        <StackPanel>
+            <local:MyImage Margin="3"
+                           VerticalAlignment="Top"
+                           Source="https://cn.bing.com/th?id=OHR.LynnCanalOrca_ZH-CN0719217908_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+            <Grid VerticalAlignment="Bottom"
+                  Margin="3,0,3,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0"
+                      Margin="10,0">
+                    <Border
+                        CornerRadius="0,0,4,4"
+                        Background="#000000"
+                        Opacity="0.5"
+                        Margin="-5">
+                        <Border.Effect>
+                            <BlurEffect Radius="10"
+                                        RenderingBias="Performance"/>
+                        </Border.Effect>
+                    </Border>
+                    <WrapPanel
+                        Margin="5">
+                        <StackPanel Margin="0,0,5,0">
+                            <Border
+                                Background="{DynamicResource ColorBrush7}"
+                                Margin="0,0,2,0"
+                                CornerRadius="5"
+                                HorizontalAlignment="Left">
+                                <TextBlock TextWrapping="Wrap"
+                                           Margin="4,2"
+                                           FontSize="16"
+                                           Foreground="{DynamicResource ColorBrush1}"
+                                           Text="2026-08-20 鲸群之声"/>
+                            </Border>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="40"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="林恩运河中浮出水面的虎鲸，奇尔卡特山脉附近，阿拉斯加州，美国"/>
+                            <TextBlock TextWrapping="Wrap"
+                                       FontSize="16"
+                                       Margin="4,0"
+                                       Grid.Column="1"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="在阿拉斯加东南部白雪覆盖的奇尔卡特山脉映衬下，一头虎鲸浮出林恩运河水面。虎鲸是海豚科体型最大的成员，也是海洋中最具辨识度的捕食者之一。阿拉斯加内湾航道寒冷且营养丰富的水域提供了充足的觅食地，既维系鲑鱼洄游，也滋养种类繁多的海洋生物，为这些非凡动物提供支持。
+
+科学家确认了数个不同的虎鲸种群，各自拥有独特的食谱、狩猎策略和社会传统。有些专门捕鱼，有些则捕食海豹、海狮及其他海洋哺乳动物。虎鲸生活在由经验丰富的年长雌鲸带领、关系紧密的家族群体中，并通过每个鲸群特有的叫声交流——这种声音传统代代相传。林恩运河及其周边水道为这些高度聪明的海洋哺乳动物提供了重要栖息地，也是野外观察它们的壮丽场所。"/>
+                        </StackPanel>
+                        <Grid Margin="10,15,10,10"
+                              VerticalAlignment="Top">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3"
+                                Margin="-5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <StackPanel
+                                Orientation="Horizontal"
+                                Margin="0,5">
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (1080P)"
+                                    ColorType="Highlight"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.LynnCanalOrca_ZH-CN0719217908_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-20的图片.jpg"/>
+                                <local:MyButton
+                                    Margin="5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (4K)"
+                                    EventType="下载文件"
+                                    EventData="https://cn.bing.com/th?id=OHR.LynnCanalOrca_ZH-CN0719217908_UHD.jpg|2026-08-20的图片.jpg"/>
+                            </StackPanel>
+                        </Grid>
+                    </WrapPanel>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</local:MyCard>

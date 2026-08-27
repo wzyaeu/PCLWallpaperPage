@@ -9,6 +9,12 @@
                        Foreground="{DynamicResource ColorBrush7}"
                        Text="Wallpaper 每日一图"/>
         </Border>
+        <TextBlock Margin="10,3,3,3"
+                   FontWeight="Bold"
+                   FontSize="16"
+                   VerticalAlignment="Center"
+                   Foreground="{DynamicResource ColorBrush3}"
+                   Text="主页"/>
         <local:MyIconTextButton Margin="2"
                                 Height="35"
                                 VerticalAlignment="Center"
@@ -148,10 +154,17 @@
                                 Margin="5,0"
                                 Padding="10,0,10,0"
                                 Height="35"
-                                Text="下载图片"
+                                Text="下载图片 (1080P)"
                                 ColorType="Highlight"
                                 EventType="下载文件"
                                 EventData="https://cn.bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-27的图片.jpg"/>
+                            <local:MyButton
+                                Margin="5,0"
+                                Padding="10,0,10,0"
+                                Height="35"
+                                Text="下载图片 (4K)"
+                                EventType="下载文件"
+                                EventData="https://cn.bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_UHD.jpg|2026-08-27的图片.jpg"/>
                             <local:MyButton
                                 Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}"
                                 Margin="5,0"
@@ -199,6 +212,17 @@
             </Grid>
         </Grid>
     </Grid>
+</local:MyCard>
+<local:MyCard Margin="0,5">
+    <StackPanel Margin="0,10">
+        <local:MyListItem Margin="10,2"
+                          Logo="pack://application:,,,/images/Blocks/Anvil.png"
+                          Title="历史画廊"
+                          Info="历史每日一图浏览"
+                          EventType="打开帮助"
+                          Type="Clickable"
+                          EventData="https://wallpaper.p.kaphia.qzz.io/history.json"/>
+    </StackPanel>
 </local:MyCard>
 <Grid Margin="5">
     <Grid.ColumnDefinitions>
