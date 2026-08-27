@@ -113,7 +113,7 @@ def init():
     today = datetime.now(timezone(timedelta(hours=8))).strftime('%Y-%m-%d')
 
     print('init-获取api数据')
-    image_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080&date={today}').json()
+    image_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080&date={today}&market=zh-CN').json()
 
     print('init-运行mainpage')
     mainpage()
