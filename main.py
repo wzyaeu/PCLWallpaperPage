@@ -3,7 +3,7 @@ import secrets
 import shutil
 import requests
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timezone, timedelta
 
 def load_template(name, noxaml = False):
     print(f'load_template-加载模板文件-{name}')
@@ -77,7 +77,7 @@ def historypage():
 
     count = 7
     output = ''
-    for index, date in enumerate(get_previous_days(image_data['date'], count), start=1):
+    for index, date in enumerate(get_previous_days(today, count), start=1):
         print(f'historypage-构建页面-{index}/{count}')
         print(f'historypage-获取api数据-{date}')
         date_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080&date={date}').json()
@@ -103,16 +103,17 @@ def historypage():
 
 def init():
     print('init-初始化中')
-    global OUTPUT_PATH, BASE_PATH, BUILD_VERSION, templates, ncm, test_environment, image_data
+    global OUTPUT_PATH, BASE_PATH, BUILD_VERSION, templates, ncm, test_environment, image_data, today
     templates = {}
     BUILD_VERSION = secrets.token_hex(4)
     BASE_PATH = os.path.dirname(__file__)
     OUTPUT_PATH = os.path.join(BASE_PATH,'output')
     shutil.rmtree(OUTPUT_PATH,ignore_errors=True)
     os.makedirs(OUTPUT_PATH,exist_ok=True)
+    today = datetime.now(timezone(timedelta(hours=8))).strftime('%Y-%m-%d')
 
     print('init-获取api数据')
-    image_data = requests.get('https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080').json()
+    image_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080&date={today}').json()
 
     print('init-运行mainpage')
     mainpage()
