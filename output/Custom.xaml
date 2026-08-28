@@ -7,7 +7,7 @@
                        VerticalAlignment="Center"
                        FontSize="18"
                        Foreground="{DynamicResource ColorBrush7}"
-                       Text="Wallpaper 每日一图"/>
+                       Text="Wallpaper 每日壁纸"/>
         </Border>
         <TextBlock Margin="10,3,3,3"
                    FontWeight="Bold"
@@ -218,7 +218,7 @@
         <local:MyListItem Margin="10,2"
                           Logo="pack://application:,,,/images/Blocks/Anvil.png"
                           Title="历史画廊"
-                          Info="历史每日一图浏览"
+                          Info="历史每日壁纸浏览"
                           EventType="打开帮助"
                           Type="Clickable"
                           EventData="https://wallpaper.p.kaphia.qzz.io/history.json"/>
@@ -252,7 +252,7 @@
                         HorizontalAlignment="Center">
                 <TextBlock FontSize="32"
                            Foreground="{DynamicResource ColorBrush7}"
-                           Text="Wallpaper 每日一图"
+                           Text="Wallpaper 每日壁纸"
                            HorizontalAlignment="Center"/>
                 <TextBlock Margin="2,4,0,0"
                            FontSize="18"

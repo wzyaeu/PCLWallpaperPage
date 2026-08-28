@@ -7,7 +7,7 @@
                        VerticalAlignment="Center"
                        FontSize="18"
                        Foreground="{DynamicResource ColorBrush7}"
-                       Text="Wallpaper 每日一图"/>
+                       Text="Wallpaper 每日壁纸"/>
         </Border>
         <TextBlock Margin="10,3,3,3"
                    FontWeight="Bold"
