@@ -283,10 +283,10 @@
     <StackPanel Margin="15,40,15,15">
         <local:MyListItem
             Margin="2"
-            Title="Bing图片"
+            Title="Bing壁纸"
             Info="提供了图片以及介绍信息"
             EventType="打开网页"
-            EventData="https://voca.wiki/Biliboard%E6%9C%AF%E5%8A%9B%E5%8F%A3%E5%91%A8%E6%A6%9C"
+            EventData="https://bing.wdbyte.com/zh-cn/"
             Type="Clickable"/>
         <local:MyListItem
             Margin="2"
