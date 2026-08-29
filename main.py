@@ -47,7 +47,6 @@ def escape_xaml(text):
              .replace('>', '&gt;')
              .replace('"', '&quot;')
              .replace("'", '&apos;')
-             .replace("\n", '&#10;')
     )
 
 def mainpage():
