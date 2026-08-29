@@ -1,0 +1,18 @@
+<local:MyButton
+    Margin="5,5,5,0"
+    Padding="10,0,10,0"
+    Height="35"
+    IsHitTestVisible="{hit}"
+    Opacity="{opac}"
+    Text="上一张">
+    <local:CustomEventService.Events>
+        <local:CustomEventCollection>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-{page}|Collapsed"/>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-{last}|Visible"/>
+            <local:CustomEvent Type="刷新页面"
+                               Data="-"/>
+        </local:CustomEventCollection>
+    </local:CustomEventService.Events>
+</local:MyButton>

@@ -1,0 +1,189 @@
+<local:MyCard Margin="0,5"
+              UseAnimation="False"
+              Visibility="{variable:PCLWallpaperPage-Today-Page-{page}:{page_default}}">
+    <Grid>
+        <Border   CornerRadius="4">
+            <Border.Background>
+                <ImageBrush
+                    ImageSource="{img}"
+                    Stretch="UniformToFill"
+                    AlignmentX="Center"
+                    AlignmentY="Center"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="10"
+                            RenderingBias="Performance"/>
+            </Border.Effect>
+        </Border>
+        <local:MyImage Margin="3"
+                       VerticalAlignment="Center"
+                       Source="{img}"/>
+        <Grid VerticalAlignment="Bottom"
+              Margin="10,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"
+                  Margin="10,0"
+                  HorizontalAlignment="{variable:PCLWallpaperPage-Today-HideText-UI:Stretch}">
+                <Border
+                    CornerRadius="4"
+                    Background="#000000"
+                    Opacity="0.5"
+                    Margin="-5">
+                    <Border.Effect>
+                        <BlurEffect Radius="10"
+                                    RenderingBias="Performance"/>
+                    </Border.Effect>
+                </Border>
+                <WrapPanel
+                    Margin="5"
+                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}">
+                    <StackPanel Margin="0,0,5,0">
+                        <Border
+                            Background="{DynamicResource ColorBrush7}"
+                            Margin="0,0,2,0"
+                            CornerRadius="5"
+                            HorizontalAlignment="Left">
+                            <TextBlock TextWrapping="Wrap"
+                                       Margin="4,2"
+                                       FontSize="16"
+                                       Foreground="{DynamicResource ColorBrush1}"
+                                       Text="{date} {title}"/>
+                        </Border>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="40"
+                                   Foreground="{DynamicResource ColorBrush8}"
+                                   Text="{sub-title}"/>
+                        <Grid>
+                            <TextBlock TextWrapping="{variable:PCLWallpaperPage-Today-DescWrap:NoWrap}"
+                                       FontSize="16"
+                                       Margin="4,0"
+                                       Grid.Column="1"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="{desc}"/>
+                            <local:MyButton
+                                ToolTip="点击查看更多"
+                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-Wrap:Visible}"
+                                Opacity="0">
+                                <local:CustomEventService.Events>
+                                    <local:CustomEventCollection>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap|Wrap"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Collapsed"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Visible"/>
+                                        <local:CustomEvent Type="刷新页面"
+                                                           Data="-"/>
+                                    </local:CustomEventCollection>
+                                </local:CustomEventService.Events>
+                            </local:MyButton>
+                            <local:MyButton
+                                ToolTip="点击省略介绍"
+                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-NoWrap:Collapsed}"
+                                Opacity="0">
+                                <local:CustomEventService.Events>
+                                    <local:CustomEventCollection>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap|NoWrap"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Visible"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Collapsed"/>
+                                        <local:CustomEvent Type="刷新页面"
+                                                           Data="-"/>
+                                    </local:CustomEventCollection>
+                                </local:CustomEventService.Events>
+                            </local:MyButton>
+                        </Grid>
+                    </StackPanel>
+                    <Grid Margin="10,15,10,10"
+                          VerticalAlignment="Top">
+                        <Border
+                            CornerRadius="4"
+                            Background="{DynamicResource ColorBrush4}"
+                            Opacity="0.5"
+                            Margin="-5">
+                            <Border.Effect>
+                                <BlurEffect Radius="10"
+                                            RenderingBias="Performance"/>
+                            </Border.Effect>
+                        </Border>
+                        <Border
+                            CornerRadius="4"
+                            Background="{DynamicResource ColorBrush8}"
+                            Opacity="0.3"
+                            Margin="-5">
+                            <Border.Effect>
+                                <BlurEffect Radius="10"
+                                            RenderingBias="Performance"/>
+                            </Border.Effect>
+                        </Border>
+                        <WrapPanel
+                            Margin="0,0,0,5">
+                            <local:MyButton
+                                Margin="5,5,5,0"
+                                Padding="10,0,10,0"
+                                Height="35"
+                                Text="下载图片 (1080P)"
+                                ColorType="Highlight"
+                                EventType="下载文件"
+                                EventData="{img}|{download_name}"/>
+                            <local:MyButton
+                                Margin="5,5,5,0"
+                                Padding="10,0,10,0"
+                                Height="35"
+                                Text="下载图片 (4K)"
+                                EventType="下载文件"
+                                EventData="{img_4k}|{download_name}"/>
+                            {left_btn}
+                            {right_btn}
+                            <local:MyButton
+                                Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}"
+                                Margin="5,5,5,0"
+                                Padding="10,0,10,0"
+                                Height="35"
+                                Text="隐藏">
+                                <local:CustomEventService.Events>
+                                    <local:CustomEventCollection>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-HideText-False|Visible"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-HideText-True|Collapsed"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-HideText-UI|Right"/>
+                                        <local:CustomEvent Type="刷新页面"
+                                                           Data="-"/>
+                                    </local:CustomEventCollection>
+                                </local:CustomEventService.Events>
+                            </local:MyButton>
+                        </WrapPanel>
+                    </Grid>
+                </WrapPanel>
+                <StackPanel Margin="5"
+                            Visibility="{variable:PCLWallpaperPage-Today-HideText-False:Collapsed}">
+                    <local:MyButton
+                        Margin="5,0"
+                        Padding="10,0,10,0"
+                        Height="35"
+                        Text="显示"
+                        ColorType="Highlight">
+                        <local:CustomEventService.Events>
+                            <local:CustomEventCollection>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-False|Collapsed"/>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-True|Visible"/>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-UI|Stretch"/>
+                                <local:CustomEvent Type="刷新页面"
+                                                   Data="-"/>
+                            </local:CustomEventCollection>
+                        </local:CustomEventService.Events>
+                    </local:MyButton>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</local:MyCard>

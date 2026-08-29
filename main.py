@@ -29,11 +29,11 @@ def get_previous_days(date_str, x):
     date_obj = datetime.strptime(date_str, '%Y-%m-%d').date()
     
     result = []
-    for i in range(1, x + 1):
+    for i in range(1, x):
         prev_date = date_obj - timedelta(days=i)
         result.append(prev_date.strftime('%Y-%m-%d'))
     
-    return result
+    return [today]+result
     
 def nlv(s):
     return '\\n'.join(str(s).splitlines())
@@ -53,20 +53,45 @@ def mainpage():
     print('mainpage-开始')
     print('mainpage-加载模板')
     load_template('mainpage')
-
+    load_template('mainpage/imagebox')
+    load_template('mainpage/left_btn')
+    load_template('mainpage/right_btn')
+    
+    count = 10
+    output = ''
     print('mainpage-构建页面')
-    output = replaces(templates['mainpage'],{
-        'img':escape_xaml(image_data['image_url']),
-        'img_4k':escape_xaml(image_data['image_url_4k']),
-        'title':escape_xaml(image_data['title']),
-        'date':escape_xaml(image_data['date']),
-        'sub-title':escape_xaml(image_data['headline']),
-        'desc':escape_xaml(image_data['description']),
-        'download_name':escape_xaml(image_data['date']+'的图片.jpg'),
-        'gv':BUILD_VERSION
-    })
+    for index, date in enumerate(get_previous_days(today, count), start=1):
+        print(f'mainpage-构建页面-{index}/{count}')
+        print(f'mainpage-获取api数据-{date}')
+        date_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080&date={date}&mkt=zh-CN').json()
+        output += replaces(templates['mainpage/imagebox'],{
+            'page':index,
+            'page_default':'Visible' if index == 1 else 'Collapsed',
+            'img':escape_xaml(date_data['image_url']),
+            'img_4k':escape_xaml(date_data['image_url_4k']),
+            'title':escape_xaml(date_data['title']),
+            'date':escape_xaml(date_data['date']),
+            'sub-title':escape_xaml(date_data['headline']),
+            'desc':escape_xaml(date_data['description']),
+            'download_name':escape_xaml(date_data['date']+'的图片.jpg'),
+            'left_btn':replaces(templates['mainpage/left_btn'],{
+                'page': index,
+                'last': index+1,
+                'hit': 'True' if index != count else 'False',
+                'opac': '1' if index != count else '0.5',
+            }),
+            'right_btn':replaces(templates['mainpage/right_btn'],{
+                'page': index,
+                'last': index-1,
+                'hit': 'True' if index != 1 else 'False',
+                'opac': '1' if index != 1 else '0.5',
+            }),
+        })
     print('mainpage-保存输出文件')
-    save_output_file('Custom.xaml',output)
+    save_output_file('Custom.xaml',replaces(templates['mainpage'],{
+        'images':output,
+        'gv':BUILD_VERSION
+    }))
     save_output_file('Custom.xaml.ini',BUILD_VERSION)
 
 def historypage():
@@ -103,7 +128,7 @@ def historypage():
 
 def init():
     print('init-初始化中')
-    global OUTPUT_PATH, BASE_PATH, BUILD_VERSION, templates, ncm, test_environment, image_data, today
+    global OUTPUT_PATH, BASE_PATH, BUILD_VERSION, templates, ncm, test_environment, today
     templates = {}
     BUILD_VERSION = secrets.token_hex(4)
     BASE_PATH = os.path.dirname(__file__)
@@ -112,13 +137,10 @@ def init():
     os.makedirs(OUTPUT_PATH,exist_ok=True)
     today = datetime.now(timezone(timedelta(hours=8))).strftime('%Y-%m-%d')
 
-    print('init-获取api数据')
-    image_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080&date={today}&mkt=zh-CN').json()
-
     print('init-运行mainpage')
     mainpage()
 
-    print('init-运行historypage')
-    historypage()
+    # print('init-运行historypage')
+    # historypage()
 
 init()
