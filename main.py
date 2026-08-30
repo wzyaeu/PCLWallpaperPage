@@ -56,6 +56,7 @@ def mainpage():
     load_template('mainpage/imagebox')
     load_template('mainpage/left_btn')
     load_template('mainpage/right_btn')
+    load_template('mainpage/test_btn')
     
     count = 10
     output = ''
@@ -86,6 +87,15 @@ def mainpage():
                 'hit': 'True' if index != 1 else 'False',
                 'opac': '1' if index != 1 else '0.5',
             }),
+            'test':escape_xaml(date_data['trivia']['question']),
+            'test_btn':'\n'.join([
+                replaces(templates['mainpage/test_btn'],{
+                    'bullet': o['bullet'],
+                    'text': escape_xaml(o['text']),
+                    'url': escape_xaml(o['url']),
+                })
+                for o in date_data['trivia']['options']
+            ]),
         })
     print('mainpage-保存输出文件')
     save_output_file('Custom.xaml',replaces(templates['mainpage'],{

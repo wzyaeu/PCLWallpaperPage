@@ -1,0 +1,7 @@
+<local:MyButton
+    Margin="5,5,5,0"
+    Padding="10,0,10,0"
+    Height="35"
+    Text="{bullet}. {text}"
+    EventType="打开网页"
+    EventData="{url}"/>

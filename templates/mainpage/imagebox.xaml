@@ -98,68 +98,99 @@
                             </local:MyButton>
                         </Grid>
                     </StackPanel>
-                    <Grid Margin="10,15,10,10"
-                          VerticalAlignment="Top">
-                        <Border
-                            CornerRadius="4"
-                            Background="{DynamicResource ColorBrush4}"
-                            Opacity="0.5"
-                            Margin="-5">
-                            <Border.Effect>
-                                <BlurEffect Radius="10"
-                                            RenderingBias="Performance"/>
-                            </Border.Effect>
-                        </Border>
-                        <Border
-                            CornerRadius="4"
-                            Background="{DynamicResource ColorBrush8}"
-                            Opacity="0.3"
-                            Margin="-5">
-                            <Border.Effect>
-                                <BlurEffect Radius="10"
-                                            RenderingBias="Performance"/>
-                            </Border.Effect>
-                        </Border>
-                        <WrapPanel
-                            Margin="0,0,0,5">
-                            <local:MyButton
-                                Margin="5,5,5,0"
-                                Padding="10,0,10,0"
-                                Height="35"
-                                Text="下载图片 (1080P)"
-                                ColorType="Highlight"
-                                EventType="下载文件"
-                                EventData="{img}|{download_name}"/>
-                            <local:MyButton
-                                Margin="5,5,5,0"
-                                Padding="10,0,10,0"
-                                Height="35"
-                                Text="下载图片 (4K)"
-                                EventType="下载文件"
-                                EventData="{img_4k}|{download_name}"/>
-                            {left_btn}
-                            {right_btn}
-                            <local:MyButton
-                                Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}"
-                                Margin="5,5,5,0"
-                                Padding="10,0,10,0"
-                                Height="35"
-                                Text="隐藏">
-                                <local:CustomEventService.Events>
-                                    <local:CustomEventCollection>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-HideText-False|Visible"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-HideText-True|Collapsed"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-HideText-UI|Right"/>
-                                        <local:CustomEvent Type="刷新页面"
-                                                           Data="-"/>
-                                    </local:CustomEventCollection>
-                                </local:CustomEventService.Events>
-                            </local:MyButton>
-                        </WrapPanel>
-                    </Grid>
+                    <WrapPanel  Margin="5,10,5,10">
+                        <Grid Margin="5,5,5,0">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <WrapPanel
+                                Margin="5,5,5,10">
+                                <local:MyButton
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (1080P)"
+                                    ColorType="Highlight"
+                                    EventType="下载文件"
+                                    EventData="{img}|{download_name}"/>
+                                <local:MyButton
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (4K)"
+                                    EventType="下载文件"
+                                    EventData="{img_4k}|{download_name}"/>
+                                {left_btn}
+                                {right_btn}
+                                <local:MyButton
+                                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}"
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="隐藏">
+                                    <local:CustomEventService.Events>
+                                        <local:CustomEventCollection>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-False|Visible"/>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-True|Collapsed"/>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-UI|Right"/>
+                                            <local:CustomEvent Type="刷新页面"
+                                                               Data="-"/>
+                                        </local:CustomEventCollection>
+                                    </local:CustomEventService.Events>
+                                </local:MyButton>
+                            </WrapPanel>
+                        </Grid>
+                        <Grid Margin="5,5,5,0">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <WrapPanel
+                                Margin="5,5,5,10">
+                                <TextBlock TextWrapping="Wrap"
+                                           VerticalAlignment="Center"
+                                           Margin="10,2,0,0"
+                                           FontSize="16"
+                                           Foreground="{DynamicResource ColorBrush6}"
+                                           Text="测验：&#10;{test}"/>
+                                <WrapPanel>
+                                    {test_btn}
+                                </WrapPanel>
+                            </WrapPanel>
+                        </Grid>
+                    </WrapPanel>
                 </WrapPanel>
                 <StackPanel Margin="5"
                             Visibility="{variable:PCLWallpaperPage-Today-HideText-False:Collapsed}">
