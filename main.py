@@ -50,6 +50,7 @@ def escape_xaml(text):
     )
 
 def mainpage():
+    global all_date_data
     print('mainpage-开始')
     print('mainpage-加载模板')
     load_template('mainpage')
@@ -57,7 +58,8 @@ def mainpage():
     load_template('mainpage/left_btn')
     load_template('mainpage/right_btn')
     load_template('mainpage/test_btn')
-    
+
+    all_date_data = []
     count = 10
     output = ''
     print('mainpage-构建页面')
@@ -97,6 +99,23 @@ def mainpage():
                 for o in date_data['trivia']['options']
             ]),
         })
+        all_date_data.append({
+            'date': date_data['date'],
+            'title': date_data['headline'],
+            'name': date_data['title'],
+            'desc': date_data['description'],
+            'image': {
+                '4k': date_data['image_url_4k'],
+                '1080p': date_data['image_url'],
+            },
+            'question': {
+                'title':date_data['trivia']['question'],
+                'options': [{
+                    'text': o['text'],
+                    'url': o['url'],
+                } for o in date_data['trivia']['options']]
+            },
+        })
     print('mainpage-保存输出文件')
     save_output_file('Custom.xaml',replaces(templates['mainpage'],{
         'images':output,
@@ -104,37 +123,12 @@ def mainpage():
     }))
     save_output_file('Custom.xaml.ini',BUILD_VERSION)
 
-def historypage():
-    print('historypage-开始')
-    print('historypage-加载模板')
-    load_template('historypage')
-    load_template('history_image')
-
-    count = 7
-    output = ''
-    for index, date in enumerate(get_previous_days(today, count), start=1):
-        print(f'historypage-构建页面-{index}/{count}')
-        print(f'historypage-获取api数据-{date}')
-        date_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080&date={date}').json()
-        output += replaces(templates['history_image'],{
-            'img':escape_xaml(date_data['image_url']),
-            'img_4k':escape_xaml(date_data['image_url_4k']),
-            'title':escape_xaml(date_data['title']),
-            'date':escape_xaml(date_data['date']),
-            'sub-title':escape_xaml(date_data['headline']),
-            'desc':escape_xaml(date_data['description']),
-            'download_name':escape_xaml(date_data['date']+'的图片.jpg'),
-        })
-    print('historypage-保存输出文件')
-    output = replaces(templates['historypage'],{
-        'image':output
-    })
-    save_output_file('history.xaml',output)
-    save_output_file(f'history.json',json.dumps(
-        {
-            'Title': f'历史画廊'
-        }
-    ,ensure_ascii=False))
+def publicdata():
+    print('publicdata-保存文件')
+    public_path = os.path.join(OUTPUT_PATH, 'public')
+    os.makedirs(public_path,exist_ok=True) 
+    with open(os.path.join(public_path, 'wallpaper.json'), 'w', encoding='utf-8') as f:
+        json.dump(all_date_data, f, ensure_ascii=False)
 
 def init():
     print('init-初始化中')
@@ -149,6 +143,9 @@ def init():
 
     print('init-运行mainpage')
     mainpage()
+
+    print('init-运行publicdata')
+    publicdata()
 
     # print('init-运行historypage')
     # historypage()
