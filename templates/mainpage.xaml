@@ -33,7 +33,7 @@
                           Info="历史每日壁纸浏览"
                           EventType="打开帮助"
                           Type="Clickable"
-                          EventData="https://wallpaper.p.kaphia.qzz.io/history.json"/>
+                          EventData="https://wallpaper.p.kaphia.top/history.json"/>
     </StackPanel>
 </local:MyCard> -->
 <Grid Margin="5">
