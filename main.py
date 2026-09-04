@@ -130,6 +130,11 @@ def publicdata():
     with open(os.path.join(public_path, 'wallpaper.json'), 'w', encoding='utf-8') as f:
         json.dump(all_date_data, f, ensure_ascii=False)
 
+def redirects():
+    with open(os.path.join(OUTPUT_PATH, '_redirects'), 'w', encoding='utf-8') as f:
+        f.write('''/ /Custom.xaml 200
+/version /Custom.xaml.ini 200''')
+
 def init():
     print('init-初始化中')
     global OUTPUT_PATH, BASE_PATH, BUILD_VERSION, templates, ncm, test_environment, today
@@ -149,5 +154,8 @@ def init():
 
     # print('init-运行historypage')
     # historypage()
+
+    print('init-运行redirects')
+    redirects()
 
 init()
