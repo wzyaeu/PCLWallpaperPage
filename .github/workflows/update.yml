@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: read
-  deployments: write
 
 jobs:
   update-and-deploy:
@@ -32,9 +31,9 @@ jobs:
       - name: Run main.py
         run: python main.py
 
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy output --project-name=wallpaperpage
+          command: deploy
