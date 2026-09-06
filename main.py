@@ -74,8 +74,8 @@ def mainpage():
             'img_4k':escape_xaml(date_data['image_url_4k']),
             'title':escape_xaml(date_data['title']),
             'date':escape_xaml(date_data['date']),
-            'sub-title':escape_xaml(date_data['headline']),
-            'desc':escape_xaml(date_data['description']),
+            'sub-title':escape_xaml(date_data.get('headline', date_data.get('copyright', ''))),
+            'desc':escape_xaml(date_data.get('description', '')),
             'download_name':escape_xaml(date_data['date']+'的图片.jpg'),
             'left_btn':replaces(templates['mainpage/left_btn'],{
                 'page': index,
