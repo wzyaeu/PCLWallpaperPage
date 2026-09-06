@@ -134,7 +134,7 @@
                                     Height="35"
                                     Text="下载图片 (4K)"
                                     EventType="下载文件"
-                                    EventData="{img_4k}|{download_name}"/>
+                                    EventData="{img_4k}|{download_name_4k}"/>
                                 {left_btn}
                                 {right_btn}
                                 <local:MyButton
@@ -156,38 +156,6 @@
                                         </local:CustomEventCollection>
                                     </local:CustomEventService.Events>
                                 </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <TextBlock TextWrapping="Wrap"
-                                           VerticalAlignment="Center"
-                                           Margin="10,2,0,0"
-                                           FontSize="16"
-                                           Foreground="{DynamicResource ColorBrush6}"
-                                           Text="测验：&#10;{test}"/>
-                                <WrapPanel>
-                                    {test_btn}
-                                </WrapPanel>
                             </WrapPanel>
                         </Grid>
                     </WrapPanel>

@@ -31,7 +31,7 @@
         <Border   CornerRadius="4">
             <Border.Background>
                 <ImageBrush
-                    ImageSource="https://cn.bing.com/th?id=OHR.AZWilderness_ZH-CN2664566131_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    ImageSource="https://bing.com/th?id=OHR.GreenCrowned_ZH-CN0697075036_1920x1080.jpg"
                     Stretch="UniformToFill"
                     AlignmentX="Center"
                     AlignmentY="Center"/>
@@ -43,7 +43,450 @@
         </Border>
         <local:MyImage Margin="3"
                        VerticalAlignment="Center"
-                       Source="https://cn.bing.com/th?id=OHR.AZWilderness_ZH-CN2664566131_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+                       Source="https://bing.com/th?id=OHR.GreenCrowned_ZH-CN0697075036_1920x1080.jpg"/>
+        <Grid VerticalAlignment="Bottom"
+              Margin="10,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"
+                  Margin="10,0"
+                  HorizontalAlignment="{variable:PCLWallpaperPage-Today-HideText-UI:Stretch}">
+                <Border
+                    CornerRadius="4"
+                    Background="#000000"
+                    Opacity="0.5"
+                    Margin="-5">
+                    <Border.Effect>
+                        <BlurEffect Radius="10"
+                                    RenderingBias="Performance"/>
+                    </Border.Effect>
+                </Border>
+                <WrapPanel
+                    Margin="5"
+                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}">
+                    <StackPanel Margin="0,0,5,0">
+                        <Border
+                            Background="{DynamicResource ColorBrush7}"
+                            Margin="0,0,2,0"
+                            CornerRadius="5"
+                            HorizontalAlignment="Left">
+                            <TextBlock TextWrapping="Wrap"
+                                       Margin="4,2"
+                                       FontSize="16"
+                                       Foreground="{DynamicResource ColorBrush1}"
+                                       Text="2026-09-05 龙虾爪花上取食的绿顶辉蜂鸟，哥斯达黎加"/>
+                        </Border>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="40"
+                                   Foreground="{DynamicResource ColorBrush8}"
+                                   Text="小小鸟儿，巨大影响"/>
+                        <Grid>
+                            <TextBlock TextWrapping="{variable:PCLWallpaperPage-Today-DescWrap:NoWrap}"
+                                       FontSize="16"
+                                       Margin="4,0"
+                                       Grid.Column="1"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="全国蜂鸟日旨在赞颂自然界中最非凡的空中飞行专家。蜂鸟仅分布于美洲，这些小鸟能够原地悬停、向后飞行，翅膀每秒可拍动数十次。它们为寻找花蜜而造访花朵时，也充当重要的传粉者，帮助维系从高山草甸到热带雨林的各种生态系统。闪耀的羽毛、非凡的敏捷性和高能耗的生活方式，使它们成为世界上最迷人的鸟类之一。"/>
+                            <local:MyButton
+                                ToolTip="点击查看更多"
+                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-Wrap:Visible}"
+                                Opacity="0">
+                                <local:CustomEventService.Events>
+                                    <local:CustomEventCollection>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap|Wrap"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Collapsed"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Visible"/>
+                                        <local:CustomEvent Type="刷新页面"
+                                                           Data="-"/>
+                                    </local:CustomEventCollection>
+                                </local:CustomEventService.Events>
+                            </local:MyButton>
+                            <local:MyButton
+                                ToolTip="点击省略介绍"
+                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-NoWrap:Collapsed}"
+                                Opacity="0">
+                                <local:CustomEventService.Events>
+                                    <local:CustomEventCollection>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap|NoWrap"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Visible"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Collapsed"/>
+                                        <local:CustomEvent Type="刷新页面"
+                                                           Data="-"/>
+                                    </local:CustomEventCollection>
+                                </local:CustomEventService.Events>
+                            </local:MyButton>
+                        </Grid>
+                    </StackPanel>
+                    <WrapPanel  Margin="5,10,5,10">
+                        <Grid Margin="5,5,5,0">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <WrapPanel
+                                Margin="5,5,5,10">
+                                <local:MyButton
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (1080P)"
+                                    ColorType="Highlight"
+                                    EventType="下载文件"
+                                    EventData="https://bing.com/th?id=OHR.GreenCrowned_ZH-CN0697075036_1920x1080.jpg|2026-09-05-1080P的图片.jpg"/>
+                                <local:MyButton
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (4K)"
+                                    EventType="下载文件"
+                                    EventData="https://bing.com/th?id=OHR.GreenCrowned_ZH-CN0697075036_UHD.jpg|2026-09-05-4K的图片.jpg"/>
+                                <local:MyButton
+    Margin="5,5,5,0"
+    Padding="10,0,10,0"
+    Height="35"
+    IsHitTestVisible="True"
+    Opacity="1"
+    Text="上一张">
+    <local:CustomEventService.Events>
+        <local:CustomEventCollection>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-1|Collapsed"/>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-2|Visible"/>
+            <local:CustomEvent Type="刷新页面"
+                               Data="-"/>
+        </local:CustomEventCollection>
+    </local:CustomEventService.Events>
+</local:MyButton>
+                                <local:MyButton
+    Margin="5,5,5,0"
+    Padding="10,0,10,0"
+    Height="35"
+    IsHitTestVisible="False"
+    Opacity="0.5"
+    Text="下一张">
+    <local:CustomEventService.Events>
+        <local:CustomEventCollection>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-1|Collapsed"/>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-0|Visible"/>
+            <local:CustomEvent Type="刷新页面"
+                               Data="-"/>
+        </local:CustomEventCollection>
+    </local:CustomEventService.Events>
+</local:MyButton>
+                                <local:MyButton
+                                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}"
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="隐藏">
+                                    <local:CustomEventService.Events>
+                                        <local:CustomEventCollection>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-False|Visible"/>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-True|Collapsed"/>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-UI|Right"/>
+                                            <local:CustomEvent Type="刷新页面"
+                                                               Data="-"/>
+                                        </local:CustomEventCollection>
+                                    </local:CustomEventService.Events>
+                                </local:MyButton>
+                            </WrapPanel>
+                        </Grid>
+                    </WrapPanel>
+                </WrapPanel>
+                <StackPanel Margin="5"
+                            Visibility="{variable:PCLWallpaperPage-Today-HideText-False:Collapsed}">
+                    <local:MyButton
+                        Margin="5,0"
+                        Padding="10,0,10,0"
+                        Height="35"
+                        Text="显示"
+                        ColorType="Highlight">
+                        <local:CustomEventService.Events>
+                            <local:CustomEventCollection>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-False|Collapsed"/>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-True|Visible"/>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-UI|Stretch"/>
+                                <local:CustomEvent Type="刷新页面"
+                                                   Data="-"/>
+                            </local:CustomEventCollection>
+                        </local:CustomEventService.Events>
+                    </local:MyButton>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</local:MyCard><local:MyCard Margin="0,5"
+              UseAnimation="False"
+              Visibility="{variable:PCLWallpaperPage-Today-Page-2:Collapsed}">
+    <Grid>
+        <Border   CornerRadius="4">
+            <Border.Background>
+                <ImageBrush
+                    ImageSource="https://bing.com/th?id=OHR.Westerheversand_ZH-CN0517707643_1920x1080.jpg"
+                    Stretch="UniformToFill"
+                    AlignmentX="Center"
+                    AlignmentY="Center"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="10"
+                            RenderingBias="Performance"/>
+            </Border.Effect>
+        </Border>
+        <local:MyImage Margin="3"
+                       VerticalAlignment="Center"
+                       Source="https://bing.com/th?id=OHR.Westerheversand_ZH-CN0517707643_1920x1080.jpg"/>
+        <Grid VerticalAlignment="Bottom"
+              Margin="10,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"
+                  Margin="10,0"
+                  HorizontalAlignment="{variable:PCLWallpaperPage-Today-HideText-UI:Stretch}">
+                <Border
+                    CornerRadius="4"
+                    Background="#000000"
+                    Opacity="0.5"
+                    Margin="-5">
+                    <Border.Effect>
+                        <BlurEffect Radius="10"
+                                    RenderingBias="Performance"/>
+                    </Border.Effect>
+                </Border>
+                <WrapPanel
+                    Margin="5"
+                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}">
+                    <StackPanel Margin="0,0,5,0">
+                        <Border
+                            Background="{DynamicResource ColorBrush7}"
+                            Margin="0,0,2,0"
+                            CornerRadius="5"
+                            HorizontalAlignment="Left">
+                            <TextBlock TextWrapping="Wrap"
+                                       Margin="4,2"
+                                       FontSize="16"
+                                       Foreground="{DynamicResource ColorBrush1}"
+                                       Text="2026-09-04 韦斯特黑弗的韦斯特黑弗桑德灯塔，石勒苏益格-荷尔斯泰因州，德国"/>
+                        </Border>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="40"
+                                   Foreground="{DynamicResource ColorBrush8}"
+                                   Text="地平线上的红与白"/>
+                        <Grid>
+                            <TextBlock TextWrapping="{variable:PCLWallpaperPage-Today-DescWrap:NoWrap}"
+                                       FontSize="16"
+                                       Margin="4,0"
+                                       Grid.Column="1"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="韦斯特黑弗桑德灯塔高耸于德国北海沿岸的盐沼之上，凭借醒目的红白条纹一眼便可辨认。灯塔建于1906年至1908年间，一个多世纪以来一直是艾德施泰特半岛的标志，为穿行北海水域的船只指引航向。如今，它仍是德国北部最著名的海岸地标之一。登上157级台阶的游客，可以饱览周围的壮阔景色。
+一条狭窄的潮汐水道蜿蜒穿过沼泽，将视线引向远处的条纹灯塔。周围景观属于石勒苏益格-荷尔斯泰因瓦登海国家公园，并位于已列入联合国教科文组织《世界遗产名录》的瓦登海之中。受潮汐持续律动的塑造，这片非凡的海岸环境会随着水位涨落在一天中不断变化。盐沼和广阔潮滩孕育了丰富多样的野生动物，使瓦登海成为世界上最重要的湿地生态系统之一。"/>
+                            <local:MyButton
+                                ToolTip="点击查看更多"
+                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-Wrap:Visible}"
+                                Opacity="0">
+                                <local:CustomEventService.Events>
+                                    <local:CustomEventCollection>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap|Wrap"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Collapsed"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Visible"/>
+                                        <local:CustomEvent Type="刷新页面"
+                                                           Data="-"/>
+                                    </local:CustomEventCollection>
+                                </local:CustomEventService.Events>
+                            </local:MyButton>
+                            <local:MyButton
+                                ToolTip="点击省略介绍"
+                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-NoWrap:Collapsed}"
+                                Opacity="0">
+                                <local:CustomEventService.Events>
+                                    <local:CustomEventCollection>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap|NoWrap"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Visible"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Collapsed"/>
+                                        <local:CustomEvent Type="刷新页面"
+                                                           Data="-"/>
+                                    </local:CustomEventCollection>
+                                </local:CustomEventService.Events>
+                            </local:MyButton>
+                        </Grid>
+                    </StackPanel>
+                    <WrapPanel  Margin="5,10,5,10">
+                        <Grid Margin="5,5,5,0">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <WrapPanel
+                                Margin="5,5,5,10">
+                                <local:MyButton
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (1080P)"
+                                    ColorType="Highlight"
+                                    EventType="下载文件"
+                                    EventData="https://bing.com/th?id=OHR.Westerheversand_ZH-CN0517707643_1920x1080.jpg|2026-09-04-1080P的图片.jpg"/>
+                                <local:MyButton
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (4K)"
+                                    EventType="下载文件"
+                                    EventData="https://bing.com/th?id=OHR.Westerheversand_ZH-CN0517707643_UHD.jpg|2026-09-04-4K的图片.jpg"/>
+                                <local:MyButton
+    Margin="5,5,5,0"
+    Padding="10,0,10,0"
+    Height="35"
+    IsHitTestVisible="True"
+    Opacity="1"
+    Text="上一张">
+    <local:CustomEventService.Events>
+        <local:CustomEventCollection>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-2|Collapsed"/>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-3|Visible"/>
+            <local:CustomEvent Type="刷新页面"
+                               Data="-"/>
+        </local:CustomEventCollection>
+    </local:CustomEventService.Events>
+</local:MyButton>
+                                <local:MyButton
+    Margin="5,5,5,0"
+    Padding="10,0,10,0"
+    Height="35"
+    IsHitTestVisible="True"
+    Opacity="1"
+    Text="下一张">
+    <local:CustomEventService.Events>
+        <local:CustomEventCollection>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-2|Collapsed"/>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-1|Visible"/>
+            <local:CustomEvent Type="刷新页面"
+                               Data="-"/>
+        </local:CustomEventCollection>
+    </local:CustomEventService.Events>
+</local:MyButton>
+                                <local:MyButton
+                                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}"
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="隐藏">
+                                    <local:CustomEventService.Events>
+                                        <local:CustomEventCollection>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-False|Visible"/>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-True|Collapsed"/>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-UI|Right"/>
+                                            <local:CustomEvent Type="刷新页面"
+                                                               Data="-"/>
+                                        </local:CustomEventCollection>
+                                    </local:CustomEventService.Events>
+                                </local:MyButton>
+                            </WrapPanel>
+                        </Grid>
+                    </WrapPanel>
+                </WrapPanel>
+                <StackPanel Margin="5"
+                            Visibility="{variable:PCLWallpaperPage-Today-HideText-False:Collapsed}">
+                    <local:MyButton
+                        Margin="5,0"
+                        Padding="10,0,10,0"
+                        Height="35"
+                        Text="显示"
+                        ColorType="Highlight">
+                        <local:CustomEventService.Events>
+                            <local:CustomEventCollection>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-False|Collapsed"/>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-True|Visible"/>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-UI|Stretch"/>
+                                <local:CustomEvent Type="刷新页面"
+                                                   Data="-"/>
+                            </local:CustomEventCollection>
+                        </local:CustomEventService.Events>
+                    </local:MyButton>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</local:MyCard><local:MyCard Margin="0,5"
+              UseAnimation="False"
+              Visibility="{variable:PCLWallpaperPage-Today-Page-3:Collapsed}">
+    <Grid>
+        <Border   CornerRadius="4">
+            <Border.Background>
+                <ImageBrush
+                    ImageSource="https://bing.com/th?id=OHR.AZWilderness_ZH-CN2664566131_1920x1080.jpg"
+                    Stretch="UniformToFill"
+                    AlignmentX="Center"
+                    AlignmentY="Center"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="10"
+                            RenderingBias="Performance"/>
+            </Border.Effect>
+        </Border>
+        <local:MyImage Margin="3"
+                       VerticalAlignment="Center"
+                       Source="https://bing.com/th?id=OHR.AZWilderness_ZH-CN2664566131_1920x1080.jpg"/>
         <Grid VerticalAlignment="Bottom"
               Margin="10,20">
             <Grid.ColumnDefinitions>
@@ -88,9 +531,7 @@
                                        Grid.Column="1"
                                        Foreground="{DynamicResource ColorBrush8}"
                                        Text="波浪通常属于海洋。但在亚利桑那州北部，它们却从沙漠中涌起。郊狼丘是朱红悬崖国家纪念区的一部分，其盘旋起伏的砂岩地貌由远古沙丘和数百万年的侵蚀共同塑造而成，造就了一片即使静止不动也仿佛泛着涟漪的景观。
-
 正是由于存在这样的地方，1964年《荒野法》才于9月3日签署成为法律，而今天正是纪念这一里程碑的日子。由于担心不断发展的国家可能会改变国土上几乎每一个角落，国会设立了国家荒野保护体系，以保护那些保留自然风貌，并为人们提供独处、探索和发现机会的土地。
-
 该法案最初保护了54片荒野地区，占地910万英亩。六十多年后的今天，这一体系覆盖的全国土地已超过1.1亿英亩。从偏远森林到经自然雕琢的沙漠岩层，这些受保护的景观邀请游客体验美国的另一面——它并非由蓝图塑造，而是由时间本身铸就。"/>
                             <local:MyButton
                                 ToolTip="点击查看更多"
@@ -157,14 +598,14 @@
                                     Text="下载图片 (1080P)"
                                     ColorType="Highlight"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.AZWilderness_ZH-CN2664566131_UHD.jpg&amp;pid=hp&amp;w=1920|2026-09-03的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.AZWilderness_ZH-CN2664566131_1920x1080.jpg|2026-09-03-1080P的图片.jpg"/>
                                 <local:MyButton
                                     Margin="5,5,5,0"
                                     Padding="10,0,10,0"
                                     Height="35"
                                     Text="下载图片 (4K)"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.AZWilderness_ZH-CN2664566131_UHD.jpg|2026-09-03的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.AZWilderness_ZH-CN2664566131_UHD.jpg|2026-09-03-4K的图片.jpg"/>
                                 <local:MyButton
     Margin="5,5,5,0"
     Padding="10,0,10,0"
@@ -175,9 +616,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-1|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-3|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-2|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-4|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -187,15 +628,15 @@
     Margin="5,5,5,0"
     Padding="10,0,10,0"
     Height="35"
-    IsHitTestVisible="False"
-    Opacity="0.5"
+    IsHitTestVisible="True"
+    Opacity="1"
     Text="下一张">
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-1|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-3|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-0|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -220,58 +661,6 @@
                                         </local:CustomEventCollection>
                                     </local:CustomEventService.Events>
                                 </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <TextBlock TextWrapping="Wrap"
-                                           VerticalAlignment="Center"
-                                           Margin="10,2,0,0"
-                                           FontSize="16"
-                                           Foreground="{DynamicResource ColorBrush6}"
-                                           Text="测验：&#10;亚利桑那州哪个地点属于朱红崖的一部分？"/>
-                                <WrapPanel>
-                                    <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="A. 马蹄湾"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E9%83%8A%E7%8B%BC%E4%B8%98&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260903_AZWilderness%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%220%22+UserChoices%3A%220%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="B. 羚羊峡谷"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E9%83%8A%E7%8B%BC%E4%B8%98&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260903_AZWilderness%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%221%22+UserChoices%3A%221%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="C. 郊狼丘"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E9%83%8A%E7%8B%BC%E4%B8%98&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260903_AZWilderness%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%222%22+UserChoices%3A%222%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%221%22&amp;FORM=HPQUIZ"/>
-                                </WrapPanel>
                             </WrapPanel>
                         </Grid>
                     </WrapPanel>
@@ -303,12 +692,12 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-2:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-4:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
                 <ImageBrush
-                    ImageSource="https://cn.bing.com/th?id=OHR.SuffolkHuts_ZH-CN2463818981_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    ImageSource="https://bing.com/th?id=OHR.SuffolkHuts_ZH-CN2463818981_1920x1080.jpg"
                     Stretch="UniformToFill"
                     AlignmentX="Center"
                     AlignmentY="Center"/>
@@ -320,7 +709,7 @@
         </Border>
         <local:MyImage Margin="3"
                        VerticalAlignment="Center"
-                       Source="https://cn.bing.com/th?id=OHR.SuffolkHuts_ZH-CN2463818981_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+                       Source="https://bing.com/th?id=OHR.SuffolkHuts_ZH-CN2463818981_1920x1080.jpg"/>
         <Grid VerticalAlignment="Bottom"
               Margin="10,20">
             <Grid.ColumnDefinitions>
@@ -365,9 +754,7 @@
                                        Grid.Column="1"
                                        Foreground="{DynamicResource ColorBrush8}"
                                        Text="在英格兰东海岸，萨福克遗产海岸融合了风吹不息的石南荒原、湿地、砾石海滩和开阔的北海景观。索思沃尔德是这里最著名的城镇之一，水域与历史在此密不可分。小镇几乎被大海、布莱斯河和周围的湿地环绕，坐落在一片狭长的半岛上；数百年来的渔业、贸易和临水生活共同塑造了这里。
-
 色彩缤纷的木制海滩小屋是索思沃尔德最具辨识度的地标之一。它们最初是作为简易的沐浴和捕鱼棚屋而建，如今已有数百座沿海岸排列，在沙滩与天空之间增添了一道道鲜亮的色彩。有些小屋仍是备受珍爱的家庭财产，代代相传。
-
 除了这些小屋，游客还会看到一座仍在运行的灯塔、一座伸入北海的栈桥，并可轻松前往沿海步道，欣赏英格兰一些最负盛名的风景。这是一片值得漫步探索的海岸——每一个转弯处似乎都会展开另一段关于大海的故事。"/>
                             <local:MyButton
                                 ToolTip="点击查看更多"
@@ -434,14 +821,14 @@
                                     Text="下载图片 (1080P)"
                                     ColorType="Highlight"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.SuffolkHuts_ZH-CN2463818981_UHD.jpg&amp;pid=hp&amp;w=1920|2026-09-02的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.SuffolkHuts_ZH-CN2463818981_1920x1080.jpg|2026-09-02-1080P的图片.jpg"/>
                                 <local:MyButton
                                     Margin="5,5,5,0"
                                     Padding="10,0,10,0"
                                     Height="35"
                                     Text="下载图片 (4K)"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.SuffolkHuts_ZH-CN2463818981_UHD.jpg|2026-09-02的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.SuffolkHuts_ZH-CN2463818981_UHD.jpg|2026-09-02-4K的图片.jpg"/>
                                 <local:MyButton
     Margin="5,5,5,0"
     Padding="10,0,10,0"
@@ -452,9 +839,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-2|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-4|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-3|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-5|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -470,9 +857,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-2|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-4|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-1|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-3|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -497,58 +884,6 @@
                                         </local:CustomEventCollection>
                                     </local:CustomEventService.Events>
                                 </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <TextBlock TextWrapping="Wrap"
-                                           VerticalAlignment="Center"
-                                           Margin="10,2,0,0"
-                                           FontSize="16"
-                                           Foreground="{DynamicResource ColorBrush6}"
-                                           Text="测验：&#10;萨福克哪座城镇以色彩斑斓的海滩小屋闻名？"/>
-                                <WrapPanel>
-                                    <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="A. 洛斯托夫特"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%8D%97%E6%B2%83%E5%B0%94%E5%BE%B7&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260902_SuffolkHuts%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%220%22+UserChoices%3A%220%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="B. 奥尔德伯勒"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%8D%97%E6%B2%83%E5%B0%94%E5%BE%B7&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260902_SuffolkHuts%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%221%22+UserChoices%3A%221%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="C. 南沃尔德"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%8D%97%E6%B2%83%E5%B0%94%E5%BE%B7&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260902_SuffolkHuts%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%222%22+UserChoices%3A%222%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%221%22&amp;FORM=HPQUIZ"/>
-                                </WrapPanel>
                             </WrapPanel>
                         </Grid>
                     </WrapPanel>
@@ -580,12 +915,12 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-3:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-5:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
                 <ImageBrush
-                    ImageSource="https://cn.bing.com/th?id=OHR.HorseHairShroom_ZH-CN2241458451_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    ImageSource="https://bing.com/th?id=OHR.HorseHairShroom_ZH-CN2241458451_1920x1080.jpg"
                     Stretch="UniformToFill"
                     AlignmentX="Center"
                     AlignmentY="Center"/>
@@ -597,7 +932,7 @@
         </Border>
         <local:MyImage Margin="3"
                        VerticalAlignment="Center"
-                       Source="https://cn.bing.com/th?id=OHR.HorseHairShroom_ZH-CN2241458451_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+                       Source="https://bing.com/th?id=OHR.HorseHairShroom_ZH-CN2241458451_1920x1080.jpg"/>
         <Grid VerticalAlignment="Bottom"
               Margin="10,20">
             <Grid.ColumnDefinitions>
@@ -642,9 +977,7 @@
                                        Grid.Column="1"
                                        Foreground="{DynamicResource ColorBrush8}"
                                        Text="九月的全国蘑菇月旨在赞颂一个常常不为人注意的世界。在森林地表、草坪和落叶下方，真菌网络循环利用养分，帮助生态系统蓬勃发展。我们看到的蘑菇只是这些隐秘生物的子实体，它们短暂现身释放孢子，随后又从视野中消失。它们并非植物；真菌自成一界，并在大自然的循环中发挥着至关重要的作用。
-
 今日图片展现的是马鬃小皮伞，这种真菌值得走近细看。这些微小的蘑菇生长在掉落的松针和林地碎屑上，纤巧的菌盖由深色、坚韧如丝的菌柄托起；菌柄纤细得如同一缕缕马毛。乍看之下，它们很容易被忽略，却揭示了隐藏在森林地表的惊人多样性。
-
 仔细观察，你便会发现，全国蘑菇月提醒着我们：大自然中一些最重要的工作发生在视线之外。从维系林地生态系统到丰富我们的餐盘，真菌证明，即使是最微小的结构也能产生巨大的影响。"/>
                             <local:MyButton
                                 ToolTip="点击查看更多"
@@ -711,14 +1044,14 @@
                                     Text="下载图片 (1080P)"
                                     ColorType="Highlight"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.HorseHairShroom_ZH-CN2241458451_UHD.jpg&amp;pid=hp&amp;w=1920|2026-09-01的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.HorseHairShroom_ZH-CN2241458451_1920x1080.jpg|2026-09-01-1080P的图片.jpg"/>
                                 <local:MyButton
                                     Margin="5,5,5,0"
                                     Padding="10,0,10,0"
                                     Height="35"
                                     Text="下载图片 (4K)"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.HorseHairShroom_ZH-CN2241458451_UHD.jpg|2026-09-01的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.HorseHairShroom_ZH-CN2241458451_UHD.jpg|2026-09-01-4K的图片.jpg"/>
                                 <local:MyButton
     Margin="5,5,5,0"
     Padding="10,0,10,0"
@@ -729,9 +1062,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-3|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-5|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-4|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-6|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -747,9 +1080,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-3|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-5|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-2|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-4|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -774,58 +1107,6 @@
                                         </local:CustomEventCollection>
                                     </local:CustomEventService.Events>
                                 </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <TextBlock TextWrapping="Wrap"
-                                           VerticalAlignment="Center"
-                                           Margin="10,2,0,0"
-                                           FontSize="16"
-                                           Foreground="{DynamicResource ColorBrush6}"
-                                           Text="测验：&#10;马鬃蘑菇通常生长在何种表面？"/>
-                                <WrapPanel>
-                                    <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="A. 倒下的松树"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%80%92%E4%B8%8B%E7%9A%84%E6%9D%BE%E6%A0%91&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260901_HorseHairShroom%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%220%22+UserChoices%3A%220%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%221%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="B. 海岸沙"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%80%92%E4%B8%8B%E7%9A%84%E6%9D%BE%E6%A0%91&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260901_HorseHairShroom%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%221%22+UserChoices%3A%221%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="C. 冰川冰"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%80%92%E4%B8%8B%E7%9A%84%E6%9D%BE%E6%A0%91&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260901_HorseHairShroom%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%222%22+UserChoices%3A%222%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-                                </WrapPanel>
                             </WrapPanel>
                         </Grid>
                     </WrapPanel>
@@ -857,12 +1138,12 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-4:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-6:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
                 <ImageBrush
-                    ImageSource="https://cn.bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    ImageSource="https://bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_1920x1080.jpg"
                     Stretch="UniformToFill"
                     AlignmentX="Center"
                     AlignmentY="Center"/>
@@ -874,7 +1155,7 @@
         </Border>
         <local:MyImage Margin="3"
                        VerticalAlignment="Center"
-                       Source="https://cn.bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+                       Source="https://bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_1920x1080.jpg"/>
         <Grid VerticalAlignment="Bottom"
               Margin="10,20">
             <Grid.ColumnDefinitions>
@@ -919,9 +1200,7 @@
                                        Grid.Column="1"
                                        Foreground="{DynamicResource ColorBrush8}"
                                        Text="站在雷吉斯坦广场上，你很容易明白为什么这里被视为撒马尔罕的建筑核心——撒马尔罕是中亚最古老的城市之一。这座位于乌兹别克斯坦的广场三面矗立着三座宏伟的经学院——伊斯兰学术中心——它们高耸的门廊吸引着人们仰头观望。然而，广场上一些最珍贵的瑰宝，只有在你走近细看时才会显露出来。
-
 今日图片中的细节让我们得以一窥几乎遍布每一处表面的精美艺术。琉璃砖、几何图案、花卉纹饰和优雅的书法以非凡的精确度融为一体，将砖石与灰泥化作绚丽夺目的色彩和图案展示。绿松石色、钴蓝色、金色和白色的色调随着光线变化而流转，使建筑在一天之中呈现出一种动态之感。
-
 这些经学院最初作为学习和宗教学术研究中心而建，环绕着一座热闹的公共广场；这里曾是丝绸之路沿线的生活中心。如今，雷吉斯坦依然同样引人入胜，吸引游客欣赏其宏伟的规模和非凡的工艺。"/>
                             <local:MyButton
                                 ToolTip="点击查看更多"
@@ -988,14 +1267,14 @@
                                     Text="下载图片 (1080P)"
                                     ColorType="Highlight"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-31的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_1920x1080.jpg|2026-08-31-1080P的图片.jpg"/>
                                 <local:MyButton
                                     Margin="5,5,5,0"
                                     Padding="10,0,10,0"
                                     Height="35"
                                     Text="下载图片 (4K)"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_UHD.jpg|2026-08-31的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_UHD.jpg|2026-08-31-4K的图片.jpg"/>
                                 <local:MyButton
     Margin="5,5,5,0"
     Padding="10,0,10,0"
@@ -1006,9 +1285,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-4|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-6|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-5|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-7|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1024,9 +1303,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-4|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-6|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-3|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-5|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1051,58 +1330,6 @@
                                         </local:CustomEventCollection>
                                     </local:CustomEventService.Events>
                                 </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <TextBlock TextWrapping="Wrap"
-                                           VerticalAlignment="Center"
-                                           Margin="10,2,0,0"
-                                           FontSize="16"
-                                           Foreground="{DynamicResource ColorBrush6}"
-                                           Text="测验：&#10;哪条历史商路曾经过雷吉斯坦？"/>
-                                <WrapPanel>
-                                    <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="A. 丝绸之路"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260831_SamarkandCeiling%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%220%22+UserChoices%3A%220%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%221%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="B. 琥珀之路"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260831_SamarkandCeiling%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%221%22+UserChoices%3A%221%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="C. 香料之路"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260831_SamarkandCeiling%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%222%22+UserChoices%3A%222%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-                                </WrapPanel>
                             </WrapPanel>
                         </Grid>
                     </WrapPanel>
@@ -1134,12 +1361,12 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-5:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-7:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
                 <ImageBrush
-                    ImageSource="https://cn.bing.com/th?id=OHR.YellowShark_ZH-CN1570569826_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    ImageSource="https://bing.com/th?id=OHR.YellowShark_ZH-CN1570569826_1920x1080.jpg"
                     Stretch="UniformToFill"
                     AlignmentX="Center"
                     AlignmentY="Center"/>
@@ -1151,7 +1378,7 @@
         </Border>
         <local:MyImage Margin="3"
                        VerticalAlignment="Center"
-                       Source="https://cn.bing.com/th?id=OHR.YellowShark_ZH-CN1570569826_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+                       Source="https://bing.com/th?id=OHR.YellowShark_ZH-CN1570569826_1920x1080.jpg"/>
         <Grid VerticalAlignment="Bottom"
               Margin="10,20">
             <Grid.ColumnDefinitions>
@@ -1196,9 +1423,7 @@
                                        Grid.Column="1"
                                        Foreground="{DynamicResource ColorBrush8}"
                                        Text="今天，国际鲸鲨日将目光投向世界上最大的鱼类。鲸鲨虽然名字中带有“鲸”，却不是鲸类，而是鱼类；体长可达60英尺，体重约20吨。它们分布在温暖的热带海域，张着嘴在水中缓缓游动，滤食浮游生物、鱼卵和其他微小猎物。每条鲸鲨身上独特的白色斑点图案都各不相同，就像人类的指纹。
-
 图片捕捉到印度尼西亚西巴布亚极乐鸟湾中的一条鲸鲨，身旁伴随着一群黄金鲹。这些色彩明亮的鱼常与鲸鲨同游，借机获取食物残渣，并利用这位庞大伙伴提供的保护。
-
 国际鲸鲨日旨在关注这一濒危物种面临的挑战，包括兼捕、船只撞击、栖息地退化和气候变化。通过提高公众意识，这一纪念日鼓励人们采取行动，世代守护这些温和的海洋使者。"/>
                             <local:MyButton
                                 ToolTip="点击查看更多"
@@ -1265,14 +1490,14 @@
                                     Text="下载图片 (1080P)"
                                     ColorType="Highlight"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.YellowShark_ZH-CN1570569826_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-30的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.YellowShark_ZH-CN1570569826_1920x1080.jpg|2026-08-30-1080P的图片.jpg"/>
                                 <local:MyButton
                                     Margin="5,5,5,0"
                                     Padding="10,0,10,0"
                                     Height="35"
                                     Text="下载图片 (4K)"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.YellowShark_ZH-CN1570569826_UHD.jpg|2026-08-30的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.YellowShark_ZH-CN1570569826_UHD.jpg|2026-08-30-4K的图片.jpg"/>
                                 <local:MyButton
     Margin="5,5,5,0"
     Padding="10,0,10,0"
@@ -1283,9 +1508,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-5|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-7|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-6|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-8|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1301,9 +1526,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-5|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-7|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-4|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-6|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1328,58 +1553,6 @@
                                         </local:CustomEventCollection>
                                     </local:CustomEventService.Events>
                                 </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <TextBlock TextWrapping="Wrap"
-                                           VerticalAlignment="Center"
-                                           Margin="10,2,0,0"
-                                           FontSize="16"
-                                           Foreground="{DynamicResource ColorBrush6}"
-                                           Text="测验：&#10;温顺的鲸鲨偏爱哪种栖息地？"/>
-                                <WrapPanel>
-                                    <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="A. 热带海洋"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E7%83%AD%E5%B8%A6%E6%B5%B7%E6%B4%8B&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260830_YellowShark%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%220%22+UserChoices%3A%220%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%221%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="B. 极地海域"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E7%83%AD%E5%B8%A6%E6%B5%B7%E6%B4%8B&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260830_YellowShark%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%221%22+UserChoices%3A%221%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="C. 温带海域"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E7%83%AD%E5%B8%A6%E6%B5%B7%E6%B4%8B&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260830_YellowShark%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%222%22+UserChoices%3A%222%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-                                </WrapPanel>
                             </WrapPanel>
                         </Grid>
                     </WrapPanel>
@@ -1411,12 +1584,12 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-6:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-8:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
                 <ImageBrush
-                    ImageSource="https://cn.bing.com/th?id=OHR.SantaCatarina_ZH-CN4170292043_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    ImageSource="https://bing.com/th?id=OHR.SantaCatarina_ZH-CN4170292043_1920x1080.jpg"
                     Stretch="UniformToFill"
                     AlignmentX="Center"
                     AlignmentY="Center"/>
@@ -1428,7 +1601,7 @@
         </Border>
         <local:MyImage Margin="3"
                        VerticalAlignment="Center"
-                       Source="https://cn.bing.com/th?id=OHR.SantaCatarina_ZH-CN4170292043_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+                       Source="https://bing.com/th?id=OHR.SantaCatarina_ZH-CN4170292043_1920x1080.jpg"/>
         <Grid VerticalAlignment="Bottom"
               Margin="10,20">
             <Grid.ColumnDefinitions>
@@ -1473,9 +1646,7 @@
                                        Grid.Column="1"
                                        Foreground="{DynamicResource ColorBrush8}"
                                        Text="在巴西南部圣卡塔琳娜州近海，图片捕捉到一种熟悉的仪式：冲浪者在碎浪之外等待，冲浪板随着大西洋的波涛起伏。从空中看，几乎什么都没有发生，但真正的功课正是在此时开始。
-
 每一道海浪都携带着风所产生的能量，而那阵风可能来自数百甚至数千英里之外。挑战在于恰好在正确的时刻迎上这股远道而来的脉动。风、潮汐、洋流和海床形态共同决定每一道涌浪如何破碎；一个细微变化，就可能让完美的滑行变成翻滚的白浪。
-
 很少有海岸线能比圣卡塔琳娜州更充分地展现这种多样性。这里拥有200多座海滩，从适合初学者的柔和浪点到世界级的管浪一应俱全。看似是一项运动，实则是在学习一种完全由流动海水诉说的语言。最优秀的冲浪者并不只是更强壮或更迅速，而是最懂得倾听的人。"/>
                             <local:MyButton
                                 ToolTip="点击查看更多"
@@ -1542,14 +1713,14 @@
                                     Text="下载图片 (1080P)"
                                     ColorType="Highlight"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.SantaCatarina_ZH-CN4170292043_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-29的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.SantaCatarina_ZH-CN4170292043_1920x1080.jpg|2026-08-29-1080P的图片.jpg"/>
                                 <local:MyButton
                                     Margin="5,5,5,0"
                                     Padding="10,0,10,0"
                                     Height="35"
                                     Text="下载图片 (4K)"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.SantaCatarina_ZH-CN4170292043_UHD.jpg|2026-08-29的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.SantaCatarina_ZH-CN4170292043_UHD.jpg|2026-08-29-4K的图片.jpg"/>
                                 <local:MyButton
     Margin="5,5,5,0"
     Padding="10,0,10,0"
@@ -1560,9 +1731,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-6|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-8|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-7|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-9|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1578,9 +1749,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-6|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-8|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-5|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-7|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1605,58 +1776,6 @@
                                         </local:CustomEventCollection>
                                     </local:CustomEventService.Events>
                                 </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <TextBlock TextWrapping="Wrap"
-                                           VerticalAlignment="Center"
-                                           Margin="10,2,0,0"
-                                           FontSize="16"
-                                           Foreground="{DynamicResource ColorBrush6}"
-                                           Text="测验：&#10;哪片海洋的波浪塑造了圣卡塔琳娜的冲浪？"/>
-                                <WrapPanel>
-                                    <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="A. 印度洋"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%A4%A7%E8%A5%BF%E6%B4%8B&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260829_SantaCatarina%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%220%22+UserChoices%3A%220%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="B. 太平洋"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%A4%A7%E8%A5%BF%E6%B4%8B&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260829_SantaCatarina%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%221%22+UserChoices%3A%221%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="C. 大西洋"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%A4%A7%E8%A5%BF%E6%B4%8B&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260829_SantaCatarina%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%222%22+UserChoices%3A%222%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%221%22&amp;FORM=HPQUIZ"/>
-                                </WrapPanel>
                             </WrapPanel>
                         </Grid>
                     </WrapPanel>
@@ -1688,12 +1807,12 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-7:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-9:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
                 <ImageBrush
-                    ImageSource="https://cn.bing.com/th?id=OHR.MichelSunset_ZH-CN0822968543_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    ImageSource="https://bing.com/th?id=OHR.MichelSunset_ZH-CN0822968543_1920x1080.jpg"
                     Stretch="UniformToFill"
                     AlignmentX="Center"
                     AlignmentY="Center"/>
@@ -1705,7 +1824,7 @@
         </Border>
         <local:MyImage Margin="3"
                        VerticalAlignment="Center"
-                       Source="https://cn.bing.com/th?id=OHR.MichelSunset_ZH-CN0822968543_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+                       Source="https://bing.com/th?id=OHR.MichelSunset_ZH-CN0822968543_1920x1080.jpg"/>
         <Grid VerticalAlignment="Bottom"
               Margin="10,20">
             <Grid.ColumnDefinitions>
@@ -1750,7 +1869,6 @@
                                        Grid.Column="1"
                                        Foreground="{DynamicResource ColorBrush8}"
                                        Text="日落时分，圣米歇尔山从法国诺曼底的水面升起，宛如一座由海洋塑造的堡垒。修道院和村庄坐落在岩石潮汐岛上，矗立于欧洲最壮观的海岸环境之一。每天两次，海水退去，露出大片沙滩；随后潮水再次涌回，重新覆盖这片景观。涨潮时，圣米歇尔山又会变成一座岛屿。数百年来，旅行者一直根据这种潮汐节奏安排行程，在条件允许时穿越潮滩，并在数小时后观看海水归来。
-
 传说这里的起源可追溯到708年：大天使米迦勒向一位主教显现，并指示他在此建造一座圣所。随着时间推移，这里发展为欧洲最重要的朝圣地之一。如今，圣米歇尔山及其周边海湾已被列入联合国教科文组织《世界遗产名录》；数百年的历史与潮汐运动仍在塑造每一次到访体验。"/>
                             <local:MyButton
                                 ToolTip="点击查看更多"
@@ -1817,14 +1935,14 @@
                                     Text="下载图片 (1080P)"
                                     ColorType="Highlight"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.MichelSunset_ZH-CN0822968543_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-28的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.MichelSunset_ZH-CN0822968543_1920x1080.jpg|2026-08-28-1080P的图片.jpg"/>
                                 <local:MyButton
                                     Margin="5,5,5,0"
                                     Padding="10,0,10,0"
                                     Height="35"
                                     Text="下载图片 (4K)"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.MichelSunset_ZH-CN0822968543_UHD.jpg|2026-08-28的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.MichelSunset_ZH-CN0822968543_UHD.jpg|2026-08-28-4K的图片.jpg"/>
                                 <local:MyButton
     Margin="5,5,5,0"
     Padding="10,0,10,0"
@@ -1835,9 +1953,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-7|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-9|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-8|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-10|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1853,9 +1971,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-7|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-9|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-6|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-8|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1880,58 +1998,6 @@
                                         </local:CustomEventCollection>
                                     </local:CustomEventService.Events>
                                 </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <TextBlock TextWrapping="Wrap"
-                                           VerticalAlignment="Center"
-                                           Margin="10,2,0,0"
-                                           FontSize="16"
-                                           Foreground="{DynamicResource ColorBrush6}"
-                                           Text="测验：&#10;圣米歇尔山位于法国哪个地区？"/>
-                                <WrapPanel>
-                                    <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="A. 布列塔尼"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E8%AF%BA%E6%9B%BC%E5%BA%95&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260828_MichelSunset%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%220%22+UserChoices%3A%220%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="B. 普罗旺斯"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E8%AF%BA%E6%9B%BC%E5%BA%95&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260828_MichelSunset%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%221%22+UserChoices%3A%221%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="C. 诺曼底"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E8%AF%BA%E6%9B%BC%E5%BA%95&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260828_MichelSunset%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%222%22+UserChoices%3A%222%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%221%22&amp;FORM=HPQUIZ"/>
-                                </WrapPanel>
                             </WrapPanel>
                         </Grid>
                     </WrapPanel>
@@ -1963,12 +2029,12 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-8:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-10:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
                 <ImageBrush
-                    ImageSource="https://cn.bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_UHD.jpg&amp;pid=hp&amp;w=1920"
+                    ImageSource="https://bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_1920x1080.jpg"
                     Stretch="UniformToFill"
                     AlignmentX="Center"
                     AlignmentY="Center"/>
@@ -1980,7 +2046,7 @@
         </Border>
         <local:MyImage Margin="3"
                        VerticalAlignment="Center"
-                       Source="https://cn.bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_UHD.jpg&amp;pid=hp&amp;w=1920"/>
+                       Source="https://bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_1920x1080.jpg"/>
         <Grid VerticalAlignment="Bottom"
               Margin="10,20">
             <Grid.ColumnDefinitions>
@@ -2025,7 +2091,6 @@
                                        Grid.Column="1"
                                        Foreground="{DynamicResource ColorBrush8}"
                                        Text="想象一个没有这些自然奇观的世界——它们容纳着地球约90%的地表淡水。湖泊是地球上最宝贵的资源之一。它们提供清洁水源、支持野生动物、帮助调节气候，并维系全球各地的社区。为肯定湖泊的重要作用，联合国将8月27日定为世界湖泊日，并于2025年首次纪念。采取行动的必要性比以往任何时候都更为迫切。全球超过1.17亿个湖泊覆盖了近4%的陆地表面，但许多湖泊正面临污染、过度利用和气候变化带来的日益严峻的压力。
-
 图片展示的是肯尼亚大裂谷中的马加迪湖，这是一座浅水碱性湖。富含矿物质的湖水滋养着大量藻类，吸引成群的小红鹳前来觅食。鸟群的粉红色羽毛常把湖岸化作令人惊叹的奇景。在世界湖泊日，这样的画面提醒我们：健康的湖泊不仅孕育非凡的野生动物，也维系着远超湖岸范围的生命。"/>
                             <local:MyButton
                                 ToolTip="点击查看更多"
@@ -2092,564 +2157,14 @@
                                     Text="下载图片 (1080P)"
                                     ColorType="Highlight"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-27的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_1920x1080.jpg|2026-08-27-1080P的图片.jpg"/>
                                 <local:MyButton
                                     Margin="5,5,5,0"
                                     Padding="10,0,10,0"
                                     Height="35"
                                     Text="下载图片 (4K)"
                                     EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_UHD.jpg|2026-08-27的图片.jpg"/>
-                                <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    IsHitTestVisible="True"
-    Opacity="1"
-    Text="上一张">
-    <local:CustomEventService.Events>
-        <local:CustomEventCollection>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-8|Collapsed"/>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-9|Visible"/>
-            <local:CustomEvent Type="刷新页面"
-                               Data="-"/>
-        </local:CustomEventCollection>
-    </local:CustomEventService.Events>
-</local:MyButton>
-                                <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    IsHitTestVisible="True"
-    Opacity="1"
-    Text="下一张">
-    <local:CustomEventService.Events>
-        <local:CustomEventCollection>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-8|Collapsed"/>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-7|Visible"/>
-            <local:CustomEvent Type="刷新页面"
-                               Data="-"/>
-        </local:CustomEventCollection>
-    </local:CustomEventService.Events>
-</local:MyButton>
-                                <local:MyButton
-                                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}"
-                                    Margin="5,5,5,0"
-                                    Padding="10,0,10,0"
-                                    Height="35"
-                                    Text="隐藏">
-                                    <local:CustomEventService.Events>
-                                        <local:CustomEventCollection>
-                                            <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-False|Visible"/>
-                                            <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-True|Collapsed"/>
-                                            <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-UI|Right"/>
-                                            <local:CustomEvent Type="刷新页面"
-                                                               Data="-"/>
-                                        </local:CustomEventCollection>
-                                    </local:CustomEventService.Events>
-                                </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <TextBlock TextWrapping="Wrap"
-                                           VerticalAlignment="Center"
-                                           Margin="10,2,0,0"
-                                           FontSize="16"
-                                           Foreground="{DynamicResource ColorBrush6}"
-                                           Text="测验：&#10;肯尼亚的马加迪湖属于哪种水体？"/>
-                                <WrapPanel>
-                                    <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="A. 咸水湖"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E7%A2%B1%E6%80%A7%E6%B9%96&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260827_LakeMagadi%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%220%22+UserChoices%3A%220%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="B. 碱性湖"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E7%A2%B1%E6%80%A7%E6%B9%96&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260827_LakeMagadi%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%221%22+UserChoices%3A%221%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%221%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="C. 冰川湖"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E7%A2%B1%E6%80%A7%E6%B9%96&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260827_LakeMagadi%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%222%22+UserChoices%3A%222%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-                                </WrapPanel>
-                            </WrapPanel>
-                        </Grid>
-                    </WrapPanel>
-                </WrapPanel>
-                <StackPanel Margin="5"
-                            Visibility="{variable:PCLWallpaperPage-Today-HideText-False:Collapsed}">
-                    <local:MyButton
-                        Margin="5,0"
-                        Padding="10,0,10,0"
-                        Height="35"
-                        Text="显示"
-                        ColorType="Highlight">
-                        <local:CustomEventService.Events>
-                            <local:CustomEventCollection>
-                                <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-False|Collapsed"/>
-                                <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-True|Visible"/>
-                                <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-UI|Stretch"/>
-                                <local:CustomEvent Type="刷新页面"
-                                                   Data="-"/>
-                            </local:CustomEventCollection>
-                        </local:CustomEventService.Events>
-                    </local:MyButton>
-                </StackPanel>
-            </Grid>
-        </Grid>
-    </Grid>
-</local:MyCard><local:MyCard Margin="0,5"
-              UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-9:Collapsed}">
-    <Grid>
-        <Border   CornerRadius="4">
-            <Border.Background>
-                <ImageBrush
-                    ImageSource="https://cn.bing.com/th?id=OHR.AurorasIceland_ZH-CN9781322454_UHD.jpg&amp;pid=hp&amp;w=1920"
-                    Stretch="UniformToFill"
-                    AlignmentX="Center"
-                    AlignmentY="Center"/>
-            </Border.Background>
-            <Border.Effect>
-                <BlurEffect Radius="10"
-                            RenderingBias="Performance"/>
-            </Border.Effect>
-        </Border>
-        <local:MyImage Margin="3"
-                       VerticalAlignment="Center"
-                       Source="https://cn.bing.com/th?id=OHR.AurorasIceland_ZH-CN9781322454_UHD.jpg&amp;pid=hp&amp;w=1920"/>
-        <Grid VerticalAlignment="Bottom"
-              Margin="10,20">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0"
-                  Margin="10,0"
-                  HorizontalAlignment="{variable:PCLWallpaperPage-Today-HideText-UI:Stretch}">
-                <Border
-                    CornerRadius="4"
-                    Background="#000000"
-                    Opacity="0.5"
-                    Margin="-5">
-                    <Border.Effect>
-                        <BlurEffect Radius="10"
-                                    RenderingBias="Performance"/>
-                    </Border.Effect>
-                </Border>
-                <WrapPanel
-                    Margin="5"
-                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}">
-                    <StackPanel Margin="0,0,5,0">
-                        <Border
-                            Background="{DynamicResource ColorBrush7}"
-                            Margin="0,0,2,0"
-                            CornerRadius="5"
-                            HorizontalAlignment="Left">
-                            <TextBlock TextWrapping="Wrap"
-                                       Margin="4,2"
-                                       FontSize="16"
-                                       Foreground="{DynamicResource ColorBrush1}"
-                                       Text="2026-08-26 基尔丘山上空的极光，冰岛"/>
-                        </Border>
-                        <TextBlock TextWrapping="Wrap"
-                                   FontSize="40"
-                                   Foreground="{DynamicResource ColorBrush8}"
-                                   Text="流光溢彩的天空"/>
-                        <Grid>
-                            <TextBlock TextWrapping="{variable:PCLWallpaperPage-Today-DescWrap:NoWrap}"
-                                       FontSize="16"
-                                       Margin="4,0"
-                                       Grid.Column="1"
-                                       Foreground="{DynamicResource ColorBrush8}"
-                                       Text="随着冰岛的夜晚再次变长，游客很快又会仰望天空，期待一睹北极光。北极光是一种发光现象，当来自太阳的粒子与地球高层大气中的气体相互作用时，便会形成闪烁的绿色、粉色、紫色，有时甚至是红色光带。冰岛地处北方，秋冬季夜晚日益漫长而黑暗，因此成为全球首屈一指的极光观赏地之一。
-
-在这片不断变化的光幕之下，矗立着冰岛最常被拍摄的山峰之一——基尔丘山。它的冰岛语名称意为“教堂山”，源于其酷似教堂的外形。基尔丘山耸立在斯奈山半岛之上，醒目的轮廓和附近的基尔丘瀑布使这里深受摄影师和极光追寻者喜爱。在晴朗的夜晚，山峰、瀑布与天空交相辉映，构成一幅近乎不真实的画面；这一非凡组合已成为冰岛最具标志性的景观之一。"/>
-                            <local:MyButton
-                                ToolTip="点击查看更多"
-                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-Wrap:Visible}"
-                                Opacity="0">
-                                <local:CustomEventService.Events>
-                                    <local:CustomEventCollection>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap|Wrap"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Collapsed"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Visible"/>
-                                        <local:CustomEvent Type="刷新页面"
-                                                           Data="-"/>
-                                    </local:CustomEventCollection>
-                                </local:CustomEventService.Events>
-                            </local:MyButton>
-                            <local:MyButton
-                                ToolTip="点击省略介绍"
-                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-NoWrap:Collapsed}"
-                                Opacity="0">
-                                <local:CustomEventService.Events>
-                                    <local:CustomEventCollection>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap|NoWrap"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Visible"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Collapsed"/>
-                                        <local:CustomEvent Type="刷新页面"
-                                                           Data="-"/>
-                                    </local:CustomEventCollection>
-                                </local:CustomEventService.Events>
-                            </local:MyButton>
-                        </Grid>
-                    </StackPanel>
-                    <WrapPanel  Margin="5,10,5,10">
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <local:MyButton
-                                    Margin="5,5,5,0"
-                                    Padding="10,0,10,0"
-                                    Height="35"
-                                    Text="下载图片 (1080P)"
-                                    ColorType="Highlight"
-                                    EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.AurorasIceland_ZH-CN9781322454_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-26的图片.jpg"/>
-                                <local:MyButton
-                                    Margin="5,5,5,0"
-                                    Padding="10,0,10,0"
-                                    Height="35"
-                                    Text="下载图片 (4K)"
-                                    EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.AurorasIceland_ZH-CN9781322454_UHD.jpg|2026-08-26的图片.jpg"/>
-                                <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    IsHitTestVisible="True"
-    Opacity="1"
-    Text="上一张">
-    <local:CustomEventService.Events>
-        <local:CustomEventCollection>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-9|Collapsed"/>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-10|Visible"/>
-            <local:CustomEvent Type="刷新页面"
-                               Data="-"/>
-        </local:CustomEventCollection>
-    </local:CustomEventService.Events>
-</local:MyButton>
-                                <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    IsHitTestVisible="True"
-    Opacity="1"
-    Text="下一张">
-    <local:CustomEventService.Events>
-        <local:CustomEventCollection>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-9|Collapsed"/>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-8|Visible"/>
-            <local:CustomEvent Type="刷新页面"
-                               Data="-"/>
-        </local:CustomEventCollection>
-    </local:CustomEventService.Events>
-</local:MyButton>
-                                <local:MyButton
-                                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}"
-                                    Margin="5,5,5,0"
-                                    Padding="10,0,10,0"
-                                    Height="35"
-                                    Text="隐藏">
-                                    <local:CustomEventService.Events>
-                                        <local:CustomEventCollection>
-                                            <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-False|Visible"/>
-                                            <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-True|Collapsed"/>
-                                            <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-UI|Right"/>
-                                            <local:CustomEvent Type="刷新页面"
-                                                               Data="-"/>
-                                        </local:CustomEventCollection>
-                                    </local:CustomEventService.Events>
-                                </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <TextBlock TextWrapping="Wrap"
-                                           VerticalAlignment="Center"
-                                           Margin="10,2,0,0"
-                                           FontSize="16"
-                                           Foreground="{DynamicResource ColorBrush6}"
-                                           Text="测验：&#10;北极光中绚丽色彩的成因是什么？"/>
-                                <WrapPanel>
-                                    <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="A. 月之倒影"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%A4%AA%E9%98%B3%E7%B2%92%E5%AD%90&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260826_AurorasIceland%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%220%22+UserChoices%3A%220%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="B. 太阳粒子"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%A4%AA%E9%98%B3%E7%B2%92%E5%AD%90&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260826_AurorasIceland%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%221%22+UserChoices%3A%221%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%221%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="C. 火山气体"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%A4%AA%E9%98%B3%E7%B2%92%E5%AD%90&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260826_AurorasIceland%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%222%22+UserChoices%3A%222%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-                                </WrapPanel>
-                            </WrapPanel>
-                        </Grid>
-                    </WrapPanel>
-                </WrapPanel>
-                <StackPanel Margin="5"
-                            Visibility="{variable:PCLWallpaperPage-Today-HideText-False:Collapsed}">
-                    <local:MyButton
-                        Margin="5,0"
-                        Padding="10,0,10,0"
-                        Height="35"
-                        Text="显示"
-                        ColorType="Highlight">
-                        <local:CustomEventService.Events>
-                            <local:CustomEventCollection>
-                                <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-False|Collapsed"/>
-                                <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-True|Visible"/>
-                                <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-UI|Stretch"/>
-                                <local:CustomEvent Type="刷新页面"
-                                                   Data="-"/>
-                            </local:CustomEventCollection>
-                        </local:CustomEventService.Events>
-                    </local:MyButton>
-                </StackPanel>
-            </Grid>
-        </Grid>
-    </Grid>
-</local:MyCard><local:MyCard Margin="0,5"
-              UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-10:Collapsed}">
-    <Grid>
-        <Border   CornerRadius="4">
-            <Border.Background>
-                <ImageBrush
-                    ImageSource="https://cn.bing.com/th?id=OHR.RedwoodPark_ZH-CN9513051062_UHD.jpg&amp;pid=hp&amp;w=1920"
-                    Stretch="UniformToFill"
-                    AlignmentX="Center"
-                    AlignmentY="Center"/>
-            </Border.Background>
-            <Border.Effect>
-                <BlurEffect Radius="10"
-                            RenderingBias="Performance"/>
-            </Border.Effect>
-        </Border>
-        <local:MyImage Margin="3"
-                       VerticalAlignment="Center"
-                       Source="https://cn.bing.com/th?id=OHR.RedwoodPark_ZH-CN9513051062_UHD.jpg&amp;pid=hp&amp;w=1920"/>
-        <Grid VerticalAlignment="Bottom"
-              Margin="10,20">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0"
-                  Margin="10,0"
-                  HorizontalAlignment="{variable:PCLWallpaperPage-Today-HideText-UI:Stretch}">
-                <Border
-                    CornerRadius="4"
-                    Background="#000000"
-                    Opacity="0.5"
-                    Margin="-5">
-                    <Border.Effect>
-                        <BlurEffect Radius="10"
-                                    RenderingBias="Performance"/>
-                    </Border.Effect>
-                </Border>
-                <WrapPanel
-                    Margin="5"
-                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}">
-                    <StackPanel Margin="0,0,5,0">
-                        <Border
-                            Background="{DynamicResource ColorBrush7}"
-                            Margin="0,0,2,0"
-                            CornerRadius="5"
-                            HorizontalAlignment="Left">
-                            <TextBlock TextWrapping="Wrap"
-                                       Margin="4,2"
-                                       FontSize="16"
-                                       Foreground="{DynamicResource ColorBrush1}"
-                                       Text="2026-08-25 红木国家与州立公园的日出，加利福尼亚州，美国"/>
-                        </Border>
-                        <TextBlock TextWrapping="Wrap"
-                                   FontSize="40"
-                                   Foreground="{DynamicResource ColorBrush8}"
-                                   Text="守护美国瑰宝"/>
-                        <Grid>
-                            <TextBlock TextWrapping="{variable:PCLWallpaperPage-Today-DescWrap:NoWrap}"
-                                       FontSize="16"
-                                       Margin="4,0"
-                                       Grid.Column="1"
-                                       Foreground="{DynamicResource ColorBrush8}"
-                                       Text="110年来，美国最杰出的户外课堂始终向人们开放，供大家探索。8月25日，美国国家公园管理局迎来其守护美国自然与文化瑰宝一个多世纪的纪念日。1916年，伍德罗·威尔逊总统签署《组织法》使其成为法律，该机构由此成立；如今，它负责管理全美数百座公园、纪念地、海滨和历史遗址。由护林员带领的项目、家庭活动和教育活动邀请游客亲近那些塑造了国家公园体系的景观与故事。
-
-今天的图片展示了加利福尼亚州北部的红木国家与州立公园，阳光照亮了一条蜿蜒穿行于地球上一些最高树木之间的小径。高耸的海岸红杉矗立在由蕨类植物和苔藓组成的葱郁林下植被之上，营造出一片既古老又充满生机的森林。这些林地是一个支撑着多种野生动物和数百年古树的生态系统的一部分，展现了美国国家公园管理局世世代代协助保护的自然奇观，也让游客有机会漫步于这些活着的巨树之下，体验一片独一无二的景观。"/>
-                            <local:MyButton
-                                ToolTip="点击查看更多"
-                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-Wrap:Visible}"
-                                Opacity="0">
-                                <local:CustomEventService.Events>
-                                    <local:CustomEventCollection>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap|Wrap"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Collapsed"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Visible"/>
-                                        <local:CustomEvent Type="刷新页面"
-                                                           Data="-"/>
-                                    </local:CustomEventCollection>
-                                </local:CustomEventService.Events>
-                            </local:MyButton>
-                            <local:MyButton
-                                ToolTip="点击省略介绍"
-                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-NoWrap:Collapsed}"
-                                Opacity="0">
-                                <local:CustomEventService.Events>
-                                    <local:CustomEventCollection>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap|NoWrap"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Visible"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Collapsed"/>
-                                        <local:CustomEvent Type="刷新页面"
-                                                           Data="-"/>
-                                    </local:CustomEventCollection>
-                                </local:CustomEventService.Events>
-                            </local:MyButton>
-                        </Grid>
-                    </StackPanel>
-                    <WrapPanel  Margin="5,10,5,10">
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <local:MyButton
-                                    Margin="5,5,5,0"
-                                    Padding="10,0,10,0"
-                                    Height="35"
-                                    Text="下载图片 (1080P)"
-                                    ColorType="Highlight"
-                                    EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.RedwoodPark_ZH-CN9513051062_UHD.jpg&amp;pid=hp&amp;w=1920|2026-08-25的图片.jpg"/>
-                                <local:MyButton
-                                    Margin="5,5,5,0"
-                                    Padding="10,0,10,0"
-                                    Height="35"
-                                    Text="下载图片 (4K)"
-                                    EventType="下载文件"
-                                    EventData="https://cn.bing.com/th?id=OHR.RedwoodPark_ZH-CN9513051062_UHD.jpg|2026-08-25的图片.jpg"/>
+                                    EventData="https://bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_UHD.jpg|2026-08-27-4K的图片.jpg"/>
                                 <local:MyButton
     Margin="5,5,5,0"
     Padding="10,0,10,0"
@@ -2705,58 +2220,6 @@
                                         </local:CustomEventCollection>
                                     </local:CustomEventService.Events>
                                 </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <TextBlock TextWrapping="Wrap"
-                                           VerticalAlignment="Center"
-                                           Margin="10,2,0,0"
-                                           FontSize="16"
-                                           Foreground="{DynamicResource ColorBrush6}"
-                                           Text="测验：&#10;哪一个美国州拥有高耸的海岸红杉？"/>
-                                <WrapPanel>
-                                    <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="A. 加利福尼亚"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%8A%A0%E5%88%A9%E7%A6%8F%E5%B0%BC%E4%BA%9A&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260825_RedwoodPark%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%220%22+UserChoices%3A%220%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%221%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="B. 俄勒冈州"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%8A%A0%E5%88%A9%E7%A6%8F%E5%B0%BC%E4%BA%9A&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260825_RedwoodPark%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%221%22+UserChoices%3A%221%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-<local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    Text="C. 华盛顿"
-    EventType="打开网页"
-    EventData="https://cn.bing.com/search?q=%E5%8A%A0%E5%88%A9%E7%A6%8F%E5%B0%BC%E4%BA%9A&amp;filters=mgzv3configlist%3A%22BingQA_Quiz_layout%22+IsConversation%3A%22True%22+btrequestsource%3A%22homepage%22+WQOskey%3A%22HPQuiz_20260825_RedwoodPark%22+WQId%3A%221%22+WQQI%3A%220%22+WQCI%3A%222%22+UserChoices%3A%222%22+ShowTimesTaskPaneTrigger%3A%22false%22+WQSCORE%3A%220%22&amp;FORM=HPQUIZ"/>
-                                </WrapPanel>
                             </WrapPanel>
                         </Grid>
                     </WrapPanel>
@@ -2850,6 +2313,15 @@
                     EventData="https://github.com/wzyaeu/PCLWallpaperPage"
                     LogoScale="1"
                     Logo="M512 12.64c-282.752 0-512 229.216-512 512 0 226.208 146.72 418.144 350.144 485.824 25.6 4.736 35.008-11.104 35.008-24.64 0-12.192-0.48-52.544-0.704-95.328-142.464 30.976-172.512-60.416-172.512-60.416-23.296-59.168-56.832-74.912-56.832-74.912-46.464-31.776 3.52-31.136 3.52-31.136 51.392 3.616 78.464 52.768 78.464 52.768 45.664 78.272 119.776 55.648 148.992 42.56 4.576-33.088 17.856-55.68 32.512-68.48-113.728-12.928-233.28-56.864-233.28-253.024 0-55.904 20-101.568 52.768-137.44-5.312-12.896-22.848-64.96 4.96-135.488 0 0 43.008-13.76 140.832 52.48 40.832-11.36 84.64-17.024 128.16-17.248 43.488 0.192 87.328 5.888 128.256 17.248 97.728-66.24 140.64-52.48 140.64-52.48 27.872 70.528 10.336 122.592 5.024 135.488 32.832 35.84 52.704 81.536 52.704 137.44 0 196.64-119.776 239.936-233.792 252.64 18.368 15.904 34.72 47.04 34.72 94.816 0 68.512-0.608 123.648-0.608 140.512 0 13.632 9.216 29.6 35.168 24.576 203.328-67.776 349.856-259.616 349.856-485.76 0-282.784-229.248-512-512-512z"/>
+                <local:MyIconTextButton
+                    Margin="2"
+                    Height="35"
+                    VerticalAlignment="Center"
+                    Text="公共数据接口文档"
+                    EventType="打开帮助"
+                    EventData="https://apiguide.p.kaphia.qzz.io/%E6%8E%A5%E5%8F%A3%E5%88%97%E8%A1%A8/PCLWallpaperPage.json"
+                    LogoScale="1"
+                    Logo="M262.4 992c-25.6 0-51.2-25.6-51.2-57.6v-44.8H38.4c-25.6 0-38.4-19.2-38.4-38.4s19.2-38.4 38.4-38.4h172.8V768c0-32 19.2-57.6 51.2-57.6h147.2c25.6 0 51.2 25.6 51.2 57.6v44.8h524.8c19.2 0 38.4 19.2 38.4 38.4s-19.2 38.4-38.4 38.4H460.8v44.8c0 32-19.2 57.6-51.2 57.6H262.4z m128-76.8v-128H281.6v128h108.8z m224-262.4c-25.6 0-51.2-25.6-51.2-57.6v-44.8H38.4C19.2 550.4 0 531.2 0 512s19.2-38.4 38.4-38.4h524.8v-44.8c0-32 19.2-57.6 51.2-57.6h147.2c25.6 0 51.2 25.6 51.2 57.6v44.8h172.8c19.2 0 38.4 19.2 38.4 38.4s-19.2 38.4-38.4 38.4h-172.8v44.8c0 32-19.2 57.6-51.2 57.6H614.4z m128-76.8V448H633.6v128h108.8zM262.4 313.6c-25.6 0-51.2-25.6-51.2-57.6v-44.8H38.4c-19.2 0-38.4-12.8-38.4-38.4 0-19.2 19.2-38.4 38.4-38.4h172.8v-44.8c0-32 19.2-57.6 51.2-57.6h147.2c25.6 0 51.2 25.6 51.2 57.6v44.8h524.8c19.2 0 38.4 19.2 38.4 38.4s-19.2 38.4-38.4 38.4H460.8V256c0 32-19.2 57.6-51.2 57.6H262.4z m128-76.8v-128H281.6v128h108.8z"/>
             </StackPanel>
         </StackPanel>
     </StackPanel>

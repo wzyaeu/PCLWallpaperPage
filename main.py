@@ -63,20 +63,22 @@ def mainpage():
     count = 10
     output = ''
     print('mainpage-构建页面')
-    for index, date in enumerate(get_previous_days(today, count), start=1):
+    print(f'mainpage-获取api数据')
+    alldate_data = requests.get(f'https://bing.npanuhin.me/CN/zh.{today.split('-')[0]}.json').json()
+    for index in range(1, count+1):
         print(f'mainpage-构建页面-{index}/{count}')
-        print(f'mainpage-获取api数据-{date}')
-        date_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily?format=json&resolution=1080&date={date}&mkt=zh-CN').json()
+        date_data = alldate_data[-index]
         output += replaces(templates['mainpage/imagebox'],{
             'page':index,
             'page_default':'Visible' if index == 1 else 'Collapsed',
-            'img':escape_xaml(date_data['image_url']),
-            'img_4k':escape_xaml(date_data['image_url_4k']),
+            'img':escape_xaml(date_data['bing_url'].replace('UHD', '1920x1080')),
+            'img_4k':escape_xaml(date_data['bing_url']),
             'title':escape_xaml(date_data['title']),
             'date':escape_xaml(date_data['date']),
-            'sub-title':escape_xaml(date_data.get('headline', date_data.get('copyright', ''))),
+            'sub-title':escape_xaml(date_data['caption']),
             'desc':escape_xaml(date_data.get('description', '')),
-            'download_name':escape_xaml(date_data['date']+'的图片.jpg'),
+            'download_name':escape_xaml(date_data['date']+'-1080P的图片.jpg'),
+            'download_name_4k':escape_xaml(date_data['date']+'-4K的图片.jpg'),
             'left_btn':replaces(templates['mainpage/left_btn'],{
                 'page': index,
                 'last': index+1,
@@ -89,31 +91,15 @@ def mainpage():
                 'hit': 'True' if index != 1 else 'False',
                 'opac': '1' if index != 1 else '0.5',
             }),
-            'test':escape_xaml(date_data['trivia']['question']),
-            'test_btn':'\n'.join([
-                replaces(templates['mainpage/test_btn'],{
-                    'bullet': o['bullet'],
-                    'text': escape_xaml(o['text']),
-                    'url': escape_xaml(o['url']),
-                })
-                for o in date_data['trivia']['options']
-            ]),
         })
         all_date_data.append({
             'date': date_data['date'],
-            'title': date_data['headline'],
+            'title': date_data['caption'],
             'name': date_data['title'],
             'desc': date_data['description'],
             'image': {
-                '4k': date_data['image_url_4k'],
-                '1080p': date_data['image_url'],
-            },
-            'question': {
-                'title':date_data['trivia']['question'],
-                'options': [{
-                    'text': o['text'],
-                    'url': o['url'],
-                } for o in date_data['trivia']['options']]
+                '4k': date_data['bing_url'],
+                '1080p': date_data['bing_url'].replace('UHD', '1920x1080'),
             },
         })
     print('mainpage-保存输出文件')
