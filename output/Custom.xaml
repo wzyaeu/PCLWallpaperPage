@@ -26,7 +26,228 @@
 </local:MyCard>
 <local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-1:Visible}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-2026-09-06:Visible}">
+    <Grid>
+        <Border   CornerRadius="4">
+            <Border.Background>
+                <ImageBrush
+                    ImageSource="https://bing.com/th?id=OHR.LakeFyans_ZH-CN1067187791_1920x1080.jpg"
+                    Stretch="UniformToFill"
+                    AlignmentX="Center"
+                    AlignmentY="Center"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="10"
+                            RenderingBias="Performance"/>
+            </Border.Effect>
+        </Border>
+        <local:MyImage Margin="3"
+                       VerticalAlignment="Center"
+                       Source="https://bing.com/th?id=OHR.LakeFyans_ZH-CN1067187791_1920x1080.jpg"/>
+        <Grid VerticalAlignment="Bottom"
+              Margin="10,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"
+                  Margin="10,0"
+                  HorizontalAlignment="{variable:PCLWallpaperPage-Today-HideText-UI:Stretch}">
+                <Border
+                    CornerRadius="4"
+                    Background="#000000"
+                    Opacity="0.5"
+                    Margin="-5">
+                    <Border.Effect>
+                        <BlurEffect Radius="10"
+                                    RenderingBias="Performance"/>
+                    </Border.Effect>
+                </Border>
+                <WrapPanel
+                    Margin="5"
+                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}">
+                    <StackPanel Margin="0,0,5,0">
+                        <Border
+                            Background="{DynamicResource ColorBrush7}"
+                            Margin="0,0,2,0"
+                            CornerRadius="5"
+                            HorizontalAlignment="Left">
+                            <TextBlock TextWrapping="Wrap"
+                                       Margin="4,2"
+                                       FontSize="16"
+                                       Foreground="{DynamicResource ColorBrush1}"
+                                       Text="2026-09-06 菲安斯湖，格兰屏国家公园，维多利亚州，澳大利亚"/>
+                        </Border>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="40"
+                                   Foreground="{DynamicResource ColorBrush8}"
+                                   Text="倒影满湖的水库"/>
+                        <Grid>
+                            <TextBlock TextWrapping="{variable:PCLWallpaperPage-Today-DescWrap:NoWrap}"
+                                       FontSize="16"
+                                       Margin="4,0"
+                                       Grid.Column="1"
+                                       Foreground="{DynamicResource ColorBrush8}"
+                                       Text="乍看之下，今天的画面更像一片被淹没的林地，而不是湖泊。光秃的树干从水中伸出，倒影横贯水面，远处的格兰屏群山熠熠生辉。这里是菲安斯湖，一座位于澳大利亚维多利亚州格兰屏（加里维德）国家公园边缘的人工水库。这里深受划船者、垂钓者、帆船爱好者和滑水者欢迎，也为人们提供了欣赏澳大利亚最壮美景观之一的绝佳前排视角。"/>
+                            <local:MyButton
+                                ToolTip="点击查看更多"
+                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-Wrap:Visible}"
+                                Opacity="0">
+                                <local:CustomEventService.Events>
+                                    <local:CustomEventCollection>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap|Wrap"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Collapsed"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Visible"/>
+                                        <local:CustomEvent Type="刷新页面"
+                                                           Data="-"/>
+                                    </local:CustomEventCollection>
+                                </local:CustomEventService.Events>
+                            </local:MyButton>
+                            <local:MyButton
+                                ToolTip="点击省略介绍"
+                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-NoWrap:Collapsed}"
+                                Opacity="0">
+                                <local:CustomEventService.Events>
+                                    <local:CustomEventCollection>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap|NoWrap"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Visible"/>
+                                        <local:CustomEvent Type="修改变量"
+                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Collapsed"/>
+                                        <local:CustomEvent Type="刷新页面"
+                                                           Data="-"/>
+                                    </local:CustomEventCollection>
+                                </local:CustomEventService.Events>
+                            </local:MyButton>
+                        </Grid>
+                    </StackPanel>
+                    <WrapPanel  Margin="5,10,5,10">
+                        <Grid Margin="5,5,5,0">
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush4}"
+                                Opacity="0.5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border
+                                CornerRadius="4"
+                                Background="{DynamicResource ColorBrush8}"
+                                Opacity="0.3">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"
+                                                RenderingBias="Performance"/>
+                                </Border.Effect>
+                            </Border>
+                            <WrapPanel
+                                Margin="5,5,5,10">
+                                <local:MyButton
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (1080P)"
+                                    ColorType="Highlight"
+                                    EventType="下载文件"
+                                    EventData="https://bing.com/th?id=OHR.LakeFyans_ZH-CN1067187791_1920x1080.jpg|2026-09-06-1080P的图片.jpg"/>
+                                <local:MyButton
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="下载图片 (4K)"
+                                    EventType="下载文件"
+                                    EventData="https://bing.com/th?id=OHR.LakeFyans_ZH-CN1067187791_UHD.jpg|2026-09-06-4K的图片.jpg"/>
+                                <local:MyButton
+    Margin="5,5,5,0"
+    Padding="10,0,10,0"
+    Height="35"
+    IsHitTestVisible="True"
+    Opacity="1"
+    Text="上一张">
+    <local:CustomEventService.Events>
+        <local:CustomEventCollection>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-2026-09-06|Collapsed"/>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-2026-09-05|Visible"/>
+            <local:CustomEvent Type="刷新页面"
+                               Data="-"/>
+        </local:CustomEventCollection>
+    </local:CustomEventService.Events>
+</local:MyButton>
+                                <local:MyButton
+    Margin="5,5,5,0"
+    Padding="10,0,10,0"
+    Height="35"
+    IsHitTestVisible="False"
+    Opacity="0.5"
+    Text="下一张">
+    <local:CustomEventService.Events>
+        <local:CustomEventCollection>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-2026-09-06|Collapsed"/>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-2026-01-01|Visible"/>
+            <local:CustomEvent Type="刷新页面"
+                               Data="-"/>
+        </local:CustomEventCollection>
+    </local:CustomEventService.Events>
+</local:MyButton>
+                                <local:MyButton
+                                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}"
+                                    Margin="5,5,5,0"
+                                    Padding="10,0,10,0"
+                                    Height="35"
+                                    Text="隐藏">
+                                    <local:CustomEventService.Events>
+                                        <local:CustomEventCollection>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-False|Visible"/>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-True|Collapsed"/>
+                                            <local:CustomEvent Type="修改变量"
+                                                               Data="PCLWallpaperPage-Today-HideText-UI|Right"/>
+                                            <local:CustomEvent Type="刷新页面"
+                                                               Data="-"/>
+                                        </local:CustomEventCollection>
+                                    </local:CustomEventService.Events>
+                                </local:MyButton>
+                            </WrapPanel>
+                        </Grid>
+                    </WrapPanel>
+                </WrapPanel>
+                <StackPanel Margin="5"
+                            Visibility="{variable:PCLWallpaperPage-Today-HideText-False:Collapsed}">
+                    <local:MyButton
+                        Margin="5,0"
+                        Padding="10,0,10,0"
+                        Height="35"
+                        Text="显示"
+                        ColorType="Highlight">
+                        <local:CustomEventService.Events>
+                            <local:CustomEventCollection>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-False|Collapsed"/>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-True|Visible"/>
+                                <local:CustomEvent Type="修改变量"
+                                                   Data="PCLWallpaperPage-Today-HideText-UI|Stretch"/>
+                                <local:CustomEvent Type="刷新页面"
+                                                   Data="-"/>
+                            </local:CustomEventCollection>
+                        </local:CustomEventService.Events>
+                    </local:MyButton>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</local:MyCard><local:MyCard Margin="0,5"
+              UseAnimation="False"
+              Visibility="{variable:PCLWallpaperPage-Today-Page-2026-09-05:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
@@ -87,7 +308,8 @@
                                        Margin="4,0"
                                        Grid.Column="1"
                                        Foreground="{DynamicResource ColorBrush8}"
-                                       Text="全国蜂鸟日旨在赞颂自然界中最非凡的空中飞行专家。蜂鸟仅分布于美洲，这些小鸟能够原地悬停、向后飞行，翅膀每秒可拍动数十次。它们为寻找花蜜而造访花朵时，也充当重要的传粉者，帮助维系从高山草甸到热带雨林的各种生态系统。闪耀的羽毛、非凡的敏捷性和高能耗的生活方式，使它们成为世界上最迷人的鸟类之一。"/>
+                                       Text="全国蜂鸟日旨在赞颂自然界中最非凡的空中飞行专家。蜂鸟仅分布于美洲，这些小鸟能够原地悬停、向后飞行，翅膀每秒可拍动数十次。它们为寻找花蜜而造访花朵时，也充当重要的传粉者，帮助维系从高山草甸到热带雨林的各种生态系统。闪耀的羽毛、非凡的敏捷性和高能耗的生活方式，使它们成为世界上最迷人的鸟类之一。
+今天的画面展示了哥斯达黎加正在龙虾爪花上取食的绿顶辉蜂鸟。它们是中美洲体形较大的蜂鸟之一，以虹彩般的祖母绿色羽毛和细长、略微弯曲的喙闻名，这样的喙非常适合深入管状花朵取食。它们栖息于从低地到山坡的湿润森林中，开花植物全年为其提供可靠的花蜜来源。这种取食行为凸显了雨林植物与传粉者之间的紧密关系，也让人得以一窥热带雨林相互联结的生命网络。"/>
                             <local:MyButton
                                 ToolTip="点击查看更多"
                                 Visibility="{variable:PCLWallpaperPage-Today-DescWrap-Wrap:Visible}"
@@ -171,9 +393,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-1|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-05|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-2|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-04|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -183,15 +405,15 @@
     Margin="5,5,5,0"
     Padding="10,0,10,0"
     Height="35"
-    IsHitTestVisible="False"
-    Opacity="0.5"
+    IsHitTestVisible="True"
+    Opacity="1"
     Text="下一张">
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-1|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-05|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-0|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-06|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -247,7 +469,7 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-2:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-2026-09-04:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
@@ -393,9 +615,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-2|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-04|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-3|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-03|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -411,9 +633,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-2|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-04|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-1|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-05|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -469,7 +691,7 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-3:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-2026-09-03:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
@@ -616,9 +838,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-3|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-03|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-4|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-02|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -634,9 +856,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-3|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-03|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-2|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-04|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -692,7 +914,7 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-4:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-2026-09-02:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
@@ -839,9 +1061,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-4|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-02|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-5|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-01|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -857,9 +1079,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-4|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-02|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-3|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-03|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -915,7 +1137,7 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-5:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-2026-09-01:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
@@ -1062,9 +1284,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-5|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-01|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-6|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-31|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1080,9 +1302,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-5|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-01|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-4|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-02|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1138,7 +1360,7 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-6:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-2026-08-31:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
@@ -1285,9 +1507,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-6|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-31|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-7|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-30|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1303,9 +1525,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-6|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-31|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-5|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-09-01|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1361,7 +1583,7 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-7:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-2026-08-30:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
@@ -1508,9 +1730,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-7|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-30|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-8|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-29|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1526,9 +1748,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-7|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-30|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-6|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-31|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1584,7 +1806,7 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-8:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-2026-08-29:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
@@ -1731,9 +1953,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-8|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-29|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-9|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-28|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1749,9 +1971,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-8|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-29|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-7|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-30|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -1807,7 +2029,7 @@
     </Grid>
 </local:MyCard><local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-9:Collapsed}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-2026-08-28:Collapsed}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>
@@ -1947,237 +2169,15 @@
     Margin="5,5,5,0"
     Padding="10,0,10,0"
     Height="35"
-    IsHitTestVisible="True"
-    Opacity="1"
-    Text="上一张">
-    <local:CustomEventService.Events>
-        <local:CustomEventCollection>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-9|Collapsed"/>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-10|Visible"/>
-            <local:CustomEvent Type="刷新页面"
-                               Data="-"/>
-        </local:CustomEventCollection>
-    </local:CustomEventService.Events>
-</local:MyButton>
-                                <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
-    IsHitTestVisible="True"
-    Opacity="1"
-    Text="下一张">
-    <local:CustomEventService.Events>
-        <local:CustomEventCollection>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-9|Collapsed"/>
-            <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-8|Visible"/>
-            <local:CustomEvent Type="刷新页面"
-                               Data="-"/>
-        </local:CustomEventCollection>
-    </local:CustomEventService.Events>
-</local:MyButton>
-                                <local:MyButton
-                                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}"
-                                    Margin="5,5,5,0"
-                                    Padding="10,0,10,0"
-                                    Height="35"
-                                    Text="隐藏">
-                                    <local:CustomEventService.Events>
-                                        <local:CustomEventCollection>
-                                            <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-False|Visible"/>
-                                            <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-True|Collapsed"/>
-                                            <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-UI|Right"/>
-                                            <local:CustomEvent Type="刷新页面"
-                                                               Data="-"/>
-                                        </local:CustomEventCollection>
-                                    </local:CustomEventService.Events>
-                                </local:MyButton>
-                            </WrapPanel>
-                        </Grid>
-                    </WrapPanel>
-                </WrapPanel>
-                <StackPanel Margin="5"
-                            Visibility="{variable:PCLWallpaperPage-Today-HideText-False:Collapsed}">
-                    <local:MyButton
-                        Margin="5,0"
-                        Padding="10,0,10,0"
-                        Height="35"
-                        Text="显示"
-                        ColorType="Highlight">
-                        <local:CustomEventService.Events>
-                            <local:CustomEventCollection>
-                                <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-False|Collapsed"/>
-                                <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-True|Visible"/>
-                                <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-UI|Stretch"/>
-                                <local:CustomEvent Type="刷新页面"
-                                                   Data="-"/>
-                            </local:CustomEventCollection>
-                        </local:CustomEventService.Events>
-                    </local:MyButton>
-                </StackPanel>
-            </Grid>
-        </Grid>
-    </Grid>
-</local:MyCard><local:MyCard Margin="0,5"
-              UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-10:Collapsed}">
-    <Grid>
-        <Border   CornerRadius="4">
-            <Border.Background>
-                <ImageBrush
-                    ImageSource="https://bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_1920x1080.jpg"
-                    Stretch="UniformToFill"
-                    AlignmentX="Center"
-                    AlignmentY="Center"/>
-            </Border.Background>
-            <Border.Effect>
-                <BlurEffect Radius="10"
-                            RenderingBias="Performance"/>
-            </Border.Effect>
-        </Border>
-        <local:MyImage Margin="3"
-                       VerticalAlignment="Center"
-                       Source="https://bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_1920x1080.jpg"/>
-        <Grid VerticalAlignment="Bottom"
-              Margin="10,20">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0"
-                  Margin="10,0"
-                  HorizontalAlignment="{variable:PCLWallpaperPage-Today-HideText-UI:Stretch}">
-                <Border
-                    CornerRadius="4"
-                    Background="#000000"
-                    Opacity="0.5"
-                    Margin="-5">
-                    <Border.Effect>
-                        <BlurEffect Radius="10"
-                                    RenderingBias="Performance"/>
-                    </Border.Effect>
-                </Border>
-                <WrapPanel
-                    Margin="5"
-                    Visibility="{variable:PCLWallpaperPage-Today-HideText-True:Visible}">
-                    <StackPanel Margin="0,0,5,0">
-                        <Border
-                            Background="{DynamicResource ColorBrush7}"
-                            Margin="0,0,2,0"
-                            CornerRadius="5"
-                            HorizontalAlignment="Left">
-                            <TextBlock TextWrapping="Wrap"
-                                       Margin="4,2"
-                                       FontSize="16"
-                                       Foreground="{DynamicResource ColorBrush1}"
-                                       Text="2026-08-27 日出时的小红鹳群，马加迪湖，肯尼亚"/>
-                        </Border>
-                        <TextBlock TextWrapping="Wrap"
-                                   FontSize="40"
-                                   Foreground="{DynamicResource ColorBrush8}"
-                                   Text="湖水、野生动物与奇景"/>
-                        <Grid>
-                            <TextBlock TextWrapping="{variable:PCLWallpaperPage-Today-DescWrap:NoWrap}"
-                                       FontSize="16"
-                                       Margin="4,0"
-                                       Grid.Column="1"
-                                       Foreground="{DynamicResource ColorBrush8}"
-                                       Text="想象一个没有这些自然奇观的世界——它们容纳着地球约90%的地表淡水。湖泊是地球上最宝贵的资源之一。它们提供清洁水源、支持野生动物、帮助调节气候，并维系全球各地的社区。为肯定湖泊的重要作用，联合国将8月27日定为世界湖泊日，并于2025年首次纪念。采取行动的必要性比以往任何时候都更为迫切。全球超过1.17亿个湖泊覆盖了近4%的陆地表面，但许多湖泊正面临污染、过度利用和气候变化带来的日益严峻的压力。
-图片展示的是肯尼亚大裂谷中的马加迪湖，这是一座浅水碱性湖。富含矿物质的湖水滋养着大量藻类，吸引成群的小红鹳前来觅食。鸟群的粉红色羽毛常把湖岸化作令人惊叹的奇景。在世界湖泊日，这样的画面提醒我们：健康的湖泊不仅孕育非凡的野生动物，也维系着远超湖岸范围的生命。"/>
-                            <local:MyButton
-                                ToolTip="点击查看更多"
-                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-Wrap:Visible}"
-                                Opacity="0">
-                                <local:CustomEventService.Events>
-                                    <local:CustomEventCollection>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap|Wrap"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Collapsed"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Visible"/>
-                                        <local:CustomEvent Type="刷新页面"
-                                                           Data="-"/>
-                                    </local:CustomEventCollection>
-                                </local:CustomEventService.Events>
-                            </local:MyButton>
-                            <local:MyButton
-                                ToolTip="点击省略介绍"
-                                Visibility="{variable:PCLWallpaperPage-Today-DescWrap-NoWrap:Collapsed}"
-                                Opacity="0">
-                                <local:CustomEventService.Events>
-                                    <local:CustomEventCollection>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap|NoWrap"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Visible"/>
-                                        <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Collapsed"/>
-                                        <local:CustomEvent Type="刷新页面"
-                                                           Data="-"/>
-                                    </local:CustomEventCollection>
-                                </local:CustomEventService.Events>
-                            </local:MyButton>
-                        </Grid>
-                    </StackPanel>
-                    <WrapPanel  Margin="5,10,5,10">
-                        <Grid Margin="5,5,5,0">
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush4}"
-                                Opacity="0.5">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <Border
-                                CornerRadius="4"
-                                Background="{DynamicResource ColorBrush8}"
-                                Opacity="0.3">
-                                <Border.Effect>
-                                    <BlurEffect Radius="10"
-                                                RenderingBias="Performance"/>
-                                </Border.Effect>
-                            </Border>
-                            <WrapPanel
-                                Margin="5,5,5,10">
-                                <local:MyButton
-                                    Margin="5,5,5,0"
-                                    Padding="10,0,10,0"
-                                    Height="35"
-                                    Text="下载图片 (1080P)"
-                                    ColorType="Highlight"
-                                    EventType="下载文件"
-                                    EventData="https://bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_1920x1080.jpg|2026-08-27-1080P的图片.jpg"/>
-                                <local:MyButton
-                                    Margin="5,5,5,0"
-                                    Padding="10,0,10,0"
-                                    Height="35"
-                                    Text="下载图片 (4K)"
-                                    EventType="下载文件"
-                                    EventData="https://bing.com/th?id=OHR.LakeMagadi_ZH-CN0601527009_UHD.jpg|2026-08-27-4K的图片.jpg"/>
-                                <local:MyButton
-    Margin="5,5,5,0"
-    Padding="10,0,10,0"
-    Height="35"
     IsHitTestVisible="False"
     Opacity="0.5"
     Text="上一张">
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-10|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-28|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-11|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-27|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -2193,9 +2193,9 @@
     <local:CustomEventService.Events>
         <local:CustomEventCollection>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-10|Collapsed"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-28|Collapsed"/>
             <local:CustomEvent Type="修改变量"
-                               Data="PCLWallpaperPage-Today-Page-9|Visible"/>
+                               Data="PCLWallpaperPage-Today-Page-2026-08-29|Visible"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
@@ -2322,6 +2322,25 @@
                     EventData="https://apiguide.p.kaphia.qzz.io/%E6%8E%A5%E5%8F%A3%E5%88%97%E8%A1%A8/PCLWallpaperPage.json"
                     LogoScale="1"
                     Logo="M262.4 992c-25.6 0-51.2-25.6-51.2-57.6v-44.8H38.4c-25.6 0-38.4-19.2-38.4-38.4s19.2-38.4 38.4-38.4h172.8V768c0-32 19.2-57.6 51.2-57.6h147.2c25.6 0 51.2 25.6 51.2 57.6v44.8h524.8c19.2 0 38.4 19.2 38.4 38.4s-19.2 38.4-38.4 38.4H460.8v44.8c0 32-19.2 57.6-51.2 57.6H262.4z m128-76.8v-128H281.6v128h108.8z m224-262.4c-25.6 0-51.2-25.6-51.2-57.6v-44.8H38.4C19.2 550.4 0 531.2 0 512s19.2-38.4 38.4-38.4h524.8v-44.8c0-32 19.2-57.6 51.2-57.6h147.2c25.6 0 51.2 25.6 51.2 57.6v44.8h172.8c19.2 0 38.4 19.2 38.4 38.4s-19.2 38.4-38.4 38.4h-172.8v44.8c0 32-19.2 57.6-51.2 57.6H614.4z m128-76.8V448H633.6v128h108.8zM262.4 313.6c-25.6 0-51.2-25.6-51.2-57.6v-44.8H38.4c-19.2 0-38.4-12.8-38.4-38.4 0-19.2 19.2-38.4 38.4-38.4h172.8v-44.8c0-32 19.2-57.6 51.2-57.6h147.2c25.6 0 51.2 25.6 51.2 57.6v44.8h524.8c19.2 0 38.4 19.2 38.4 38.4s-19.2 38.4-38.4 38.4H460.8V256c0 32-19.2 57.6-51.2 57.6H262.4z m128-76.8v-128H281.6v128h108.8z"/>
+                <local:MyIconTextButton
+                    Margin="2"
+                    Height="35"
+                    VerticalAlignment="Center"
+                    Text="清除缓存"
+                    ToolTip="使用时会在本地产生不必要的注册表数据，点击此清除有关Wallpaper 每日壁纸的相关数据。这会让选择日期、简介省略等状态重置。"
+                    LogoScale="1"
+                    Logo="M943.098 388.291c-3.055-5.038-7.49-9.338-13.134-12.194l-76.22-38.294-70.353-35.368 95.988-191.713c6.45-12.867-4.132-31.243-23.649-41.017-19.516-9.775-40.58-7.256-47.029 5.644l-95.926 191.588-63.57-31.957-98.86-49.683c-0.438-0.234-0.909-0.404-1.379-0.605-0.536-0.235-1.008-0.47-1.547-0.672-0.47-0.2-0.94-0.37-1.476-0.503-0.537-0.168-1.043-0.37-1.58-0.539-0.503-0.134-1.005-0.201-1.512-0.336-0.538-0.102-1.075-0.27-1.613-0.337-0.504-0.101-1.005-0.134-1.546-0.202l-1.612-0.201c-0.47-0.034-1.005 0-1.512-0.034-0.535 0-1.075-0.034-1.579 0-0.535 0-1.043 0.034-1.546 0.101-0.535 0.034-1.076 0.034-1.58 0.102-0.502 0.066-1.005 0.168-1.512 0.268-0.537 0.101-1.043 0.169-1.545 0.269a79.31 79.31 0 0 0-1.478 0.403c-0.503 0.134-1.006 0.268-1.546 0.436-0.47 0.169-0.941 0.337-1.41 0.537-0.47 0.17-0.975 0.337-1.478 0.538-0.437 0.235-0.874 0.47-1.344 0.672l-1.411 0.706c-0.47 0.268-0.874 0.537-1.308 0.806-0.439 0.268-0.909 0.538-1.38 0.84-0.404 0.301-0.806 0.638-1.21 0.94-0.405 0.3-0.874 0.638-1.277 0.974-0.403 0.335-0.739 0.705-1.141 1.076a11.47 11.47 0 0 0-1.142 1.075c-0.403 0.37-0.74 0.806-1.074 1.21-0.368 0.405-0.741 0.772-1.043 1.174-0.37 0.436-0.671 0.908-0.974 1.378-0.336 0.404-0.638 0.84-0.908 1.277-0.303 0.47-0.572 0.974-0.874 1.477-0.234 0.436-0.503 0.807-0.704 1.243-23.515 45.719-53.145 88.885-88.55 128.994-0.504 0.572-1.008 1.108-1.478 1.713-22.641 25.462-47.566 49.75-74.743 72.693C271.49 462.563 188.616 510.67 96.002 545.738c-13.639 5.176-21.767 18.612-20.76 32.517a32.289 32.289 0 0 0 15.385 29.762L646.546 947.77a32.45 32.45 0 0 0 12.765 4.468 32.288 32.288 0 0 0 18.544 5.877c8.164 0 16.358-3.09 22.64-9.237 78.17-76.725 139.542-162.821 182.44-255.939 43.401-94.124 65.571-190.435 65.907-286.138a32.15 32.15 0 0 0-5.744-18.51z m-118.843 277.61c-36.716 79.647-88.247 153.888-153.316 221.006l-122.813-75.048 77.128-75.447c12.766-12.463 13-32.922 0.503-45.685-12.498-12.768-32.92-13.002-45.686-0.506l-88.819 86.87-144.447-88.279 87.206-61.138c14.647-10.212 18.175-30.37 7.929-45.015-10.212-14.578-30.368-18.14-45.013-7.892l-110.284 77.295-112.5-68.73c77.464-34.87 147.873-78.841 209.884-131.144 22.91-19.383 44.408-39.606 64.397-60.703L844.41 617.627a713.555 713.555 0 0 1-20.155 48.273z m40.209-111.257L491.656 341.736c21.433-27.077 40.648-55.327 57.58-84.653l334.579 168.164c-1.548 43.065-8.064 86.3-19.351 129.397z">
+                    <local:CustomEventService.Events>
+                        <local:CustomEventCollection>
+                            <local:CustomEvent Type="执行命令"
+                                               Data="cmd.exe|/c for /f &quot;tokens=1&quot; %i in ('reg query &quot;HKCU\Software\PCL&quot; ^| findstr /i &quot;CustomEventPCLWallpaperPage-&quot;') do reg delete &quot;HKCU\Software\PCL&quot; /v &quot;%i&quot; /f"/>
+                            <local:CustomEvent Type="弹出窗口"
+                                               Data="已清除缓存|已清除Wallpaper 每日壁纸相关缓存！"/>
+                            <local:CustomEvent Type="刷新主页"
+                                               Data="-"/>
+                        </local:CustomEventCollection>
+                    </local:CustomEventService.Events>
+                </local:MyIconTextButton>
             </StackPanel>
         </StackPanel>
     </StackPanel>

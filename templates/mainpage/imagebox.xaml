@@ -1,6 +1,6 @@
 <local:MyCard Margin="0,5"
               UseAnimation="False"
-              Visibility="{variable:PCLWallpaperPage-Today-Page-{page}:{page_default}}">
+              Visibility="{variable:PCLWallpaperPage-Today-Page-{date}:{page_default}}">
     <Grid>
         <Border   CornerRadius="4">
             <Border.Background>

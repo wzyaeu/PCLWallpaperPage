@@ -69,7 +69,6 @@ def mainpage():
         print(f'mainpage-构建页面-{index}/{count}')
         date_data = alldate_data[-index]
         output += replaces(templates['mainpage/imagebox'],{
-            'page':index,
             'page_default':'Visible' if index == 1 else 'Collapsed',
             'img':escape_xaml(date_data['bing_url'].replace('UHD', '1920x1080')),
             'img_4k':escape_xaml(date_data['bing_url']),
@@ -80,14 +79,14 @@ def mainpage():
             'download_name':escape_xaml(date_data['date']+'-1080P的图片.jpg'),
             'download_name_4k':escape_xaml(date_data['date']+'-4K的图片.jpg'),
             'left_btn':replaces(templates['mainpage/left_btn'],{
-                'page': index,
-                'last': index+1,
+                'page': alldate_data[-index]['date'],
+                'last': alldate_data[-index-1]['date'],
                 'hit': 'True' if index != count else 'False',
                 'opac': '1' if index != count else '0.5',
             }),
             'right_btn':replaces(templates['mainpage/right_btn'],{
-                'page': index,
-                'last': index-1,
+                'page': alldate_data[-index]['date'],
+                'last': alldate_data[-index+1]['date'],
                 'hit': 'True' if index != 1 else 'False',
                 'opac': '1' if index != 1 else '0.5',
             }),
