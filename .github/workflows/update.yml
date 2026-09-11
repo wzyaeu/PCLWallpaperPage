@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   update-and-deploy:
@@ -30,10 +30,19 @@ jobs:
 
       - name: Run main.py
         run: python main.py
-        
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy output --project-name=wallpaperpage
+
+      - name: Push output to pagedata branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # 基于产物重建 pagedata 分支（每次仅保留一个提交）
+          git checkout --orphan pagedata
+          git rm -rf --cached . > /dev/null 2>&1 || true
+
+          # 仅提交产物目录与 Worker 配置
+          git commit -m "更新页面"
+
+          # 强制推送，确保远端产物分支与本次产物一致
+          git push --force origin pagedata
