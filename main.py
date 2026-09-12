@@ -108,13 +108,6 @@ def mainpage():
     }))
     save_output_file('Custom.xaml.ini',BUILD_VERSION)
 
-def publicdata():
-    print('publicdata-保存文件')
-    public_path = os.path.join(OUTPUT_PATH, 'public')
-    os.makedirs(public_path,exist_ok=True) 
-    with open(os.path.join(public_path, 'wallpaper.json'), 'w', encoding='utf-8') as f:
-        json.dump(all_date_data, f, ensure_ascii=False)
-
 def redirects():
     with open(os.path.join(OUTPUT_PATH, '_redirects'), 'w', encoding='utf-8') as f:
         f.write('''/ /Custom.xaml 200
@@ -133,9 +126,6 @@ def init():
 
     print('init-运行mainpage')
     mainpage()
-
-    print('init-运行publicdata')
-    publicdata()
 
     # print('init-运行historypage')
     # historypage()
