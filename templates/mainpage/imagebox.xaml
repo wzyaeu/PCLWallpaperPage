@@ -1,3 +1,4 @@
+{visable}
 <local:MyCard Margin="0,5"
               UseAnimation="False"
               Visibility="{variable:PCLWallpaperPage-Today-Page-{date}:{page_default}}">
@@ -186,3 +187,4 @@
         </Grid>
     </Grid>
 </local:MyCard>
+{visable-foot}

@@ -33,7 +33,7 @@ def get_previous_days(date_str, x):
         prev_date = date_obj - timedelta(days=i)
         result.append(prev_date.strftime('%Y-%m-%d'))
     
-    return [today]+result
+    return [date_str]+result
     
 def nlv(s):
     return '\\n'.join(str(s).splitlines())
@@ -58,6 +58,8 @@ def mainpage():
     load_template('mainpage/left_btn')
     load_template('mainpage/right_btn')
     load_template('mainpage/test_btn')
+    load_template('mainpage/visablebox')
+    load_template('mainpage/visablebox_foot')
 
     all_date_data = []
     count = 10
@@ -65,10 +67,16 @@ def mainpage():
     print('mainpage-构建页面')
     print(f'mainpage-获取api数据')
     alldate_data = requests.get(f'https://bing.npanuhin.me/CN/zh.{today.split('-')[0]}.json').json()
+    start_day = get_previous_days(alldate_data[-1]['date'], count)
+    print(start_day)
     for index in range(1, count+1):
         print(f'mainpage-构建页面-{index}/{count}')
         date_data = alldate_data[-index]
         output += replaces(templates['mainpage/imagebox'],{
+            'visable': ''.join([replaces(templates['mainpage/visablebox'],{
+                'date': d
+            }) for d in start_day if d != date_data['date']]),
+            'visable-foot': ''.join([templates['mainpage/visablebox_foot']]*(count-1)),
             'page_default':'Visible' if index == 1 else 'Collapsed',
             'img':escape_xaml(date_data['bing_url'].replace('UHD', '1920x1080')),
             'img_4k':escape_xaml(date_data['bing_url']),

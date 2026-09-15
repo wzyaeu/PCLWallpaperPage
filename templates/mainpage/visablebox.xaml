@@ -1,0 +1,1 @@
+<StackPanel Visibility="{variable:PCLWallpaperPage-Today-Page-Not{date}:Visible}">

@@ -10,7 +10,11 @@
             <local:CustomEvent Type="修改变量"
                                Data="PCLWallpaperPage-Today-Page-{page}|Collapsed"/>
             <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-Not{page}|Visible"/>
+            <local:CustomEvent Type="修改变量"
                                Data="PCLWallpaperPage-Today-Page-{last}|Visible"/>
+            <local:CustomEvent Type="修改变量"
+                               Data="PCLWallpaperPage-Today-Page-Not{last}|Collapsed"/>
             <local:CustomEvent Type="刷新页面"
                                Data="-"/>
         </local:CustomEventCollection>
