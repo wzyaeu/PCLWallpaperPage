@@ -116,10 +116,10 @@
     <StackPanel Margin="15,40,15,15">
         <local:MyListItem
             Margin="2"
-            Title="Bing壁纸"
-            Info="提供了图片以及介绍信息"
+            Title="Uapis"
+            Info="提供了图片以及介绍信息API"
             EventType="打开网页"
-            EventData="https://bing.wdbyte.com/zh-cn/"
+            EventData="https://uapis.cn/docs/api-reference/get-image-bing-daily-history"
             Type="Clickable"/>
         <local:MyListItem
             Margin="2"
