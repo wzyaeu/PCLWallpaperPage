@@ -62,52 +62,42 @@ def mainpage():
     load_template('mainpage/visablebox_foot')
 
     all_date_data = []
-    count = 10
+    count = 12
     output = ''
     print('mainpage-构建页面')
     print(f'mainpage-获取api数据')
-    alldate_data = requests.get(f'https://bing.npanuhin.me/CN/zh.{today.split('-')[0]}.json').json()
-    start_day = get_previous_days(alldate_data[-1]['date'], count)
+    alldate_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily/history?page_size={count}').json()['items']
+    start_day = get_previous_days(alldate_data[0]['date'], count)
     print(start_day)
-    for index in range(1, count+1):
-        print(f'mainpage-构建页面-{index}/{count}')
-        date_data = alldate_data[-index]
+    for index in range(0, count):
+        date_data = alldate_data[index]
+        print(f'mainpage-构建页面-{index}/{count} {date_data['date']}')
         output += replaces(templates['mainpage/imagebox'],{
             'visable': ''.join([replaces(templates['mainpage/visablebox'],{
                 'date': d
             }) for d in start_day if d != date_data['date']]),
             'visable-foot': ''.join([templates['mainpage/visablebox_foot']]*(count-1)),
             'page_default':'Visible' if index == 1 else 'Collapsed',
-            'img':escape_xaml(date_data['bing_url'].replace('UHD', '1920x1080')),
-            'img_4k':escape_xaml(date_data['bing_url']),
+            'img':escape_xaml(date_data['image_url_1080']),
+            'img_4k':escape_xaml(date_data['image_url_4k']),
             'title':escape_xaml(date_data['title']),
             'date':escape_xaml(date_data['date']),
-            'sub-title':escape_xaml(date_data['caption']),
+            'sub-title':escape_xaml(date_data['headline']),
             'desc':escape_xaml(date_data.get('description', '')),
             'download_name':escape_xaml(date_data['date']+'-1080P的图片.jpg'),
             'download_name_4k':escape_xaml(date_data['date']+'-4K的图片.jpg'),
             'left_btn':replaces(templates['mainpage/left_btn'],{
-                'page': alldate_data[-index]['date'],
-                'last': alldate_data[-index-1]['date'],
-                'hit': 'True' if index != count else 'False',
-                'opac': '1' if index != count else '0.5',
+                'page': alldate_data[index]['date'],
+                'last': alldate_data[index+1]['date'] if index != count-1 else '滚木',
+                'hit': 'True' if index != count-1 else 'False',
+                'opac': '1' if index != count-1 else '0.5',
             }),
             'right_btn':replaces(templates['mainpage/right_btn'],{
-                'page': alldate_data[-index]['date'],
-                'last': alldate_data[-index+1]['date'],
-                'hit': 'True' if index != 1 else 'False',
-                'opac': '1' if index != 1 else '0.5',
+                'page': alldate_data[index]['date'],
+                'last': alldate_data[index-1]['date'] if index != 0 else '滚木',
+                'hit': 'True' if index != 0 else 'False',
+                'opac': '1' if index != 0 else '0.5',
             }),
-        })
-        all_date_data.append({
-            'date': date_data['date'],
-            'title': date_data['caption'],
-            'name': date_data['title'],
-            'desc': date_data['description'],
-            'image': {
-                '4k': date_data['bing_url'],
-                '1080p': date_data['bing_url'].replace('UHD', '1920x1080'),
-            },
         })
     print('mainpage-保存输出文件')
     save_output_file('Custom.xaml',replaces(templates['mainpage'],{
