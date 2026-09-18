@@ -105,6 +105,11 @@ def mainpage():
         'gv':BUILD_VERSION
     }))
     save_output_file('Custom.xaml.ini',BUILD_VERSION)
+    save_output_file('Custom.json',json.dumps(
+        {
+            "Title": "Wallpaper 每日壁纸"
+        }
+    ,ensure_ascii=False))
 
 def redirects():
     with open(os.path.join(OUTPUT_PATH, '_redirects'), 'w', encoding='utf-8') as f:
