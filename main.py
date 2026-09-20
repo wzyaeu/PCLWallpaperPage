@@ -82,7 +82,7 @@ def mainpage():
             'img_4k':escape_xaml(date_data['image_url_4k']),
             'title':escape_xaml(date_data['title']),
             'date':escape_xaml(date_data['date']),
-            'sub-title':escape_xaml(date_data['headline']),
+            'sub-title':escape_xaml(date_data.get('headline', date_data.get('subtitle', date_data['title']))),
             'desc':escape_xaml(date_data.get('description', '')),
             'download_name':escape_xaml(date_data['date']+'-1080P的图片.jpg'),
             'download_name_4k':escape_xaml(date_data['date']+'-4K的图片.jpg'),
