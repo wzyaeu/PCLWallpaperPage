@@ -102,7 +102,10 @@ def mainpage():
     print('mainpage-保存输出文件')
     save_output_file('Custom.xaml',replaces(templates['mainpage'],{
         'images':output,
-        'gv':BUILD_VERSION
+        'gv':BUILD_VERSION,
+        'sponsors':'\n'.join([replaces(templates['sponsors'],{
+            'sponsor': s
+        }) for s in sponsors])
     }))
     save_output_file('Custom.xaml.ini',BUILD_VERSION)
     save_output_file('Custom.json',json.dumps(
@@ -118,7 +121,7 @@ def redirects():
 
 def init():
     print('init-初始化中')
-    global OUTPUT_PATH, BASE_PATH, BUILD_VERSION, templates, ncm, test_environment, today
+    global OUTPUT_PATH, BASE_PATH, BUILD_VERSION, templates, ncm, test_environment, today, sponsors
     templates = {}
     BUILD_VERSION = secrets.token_hex(4)
     BASE_PATH = os.path.dirname(__file__)
@@ -126,6 +129,7 @@ def init():
     shutil.rmtree(OUTPUT_PATH,ignore_errors=True)
     os.makedirs(OUTPUT_PATH,exist_ok=True)
     today = datetime.now(timezone(timedelta(hours=8))).strftime('%Y-%m-%d')
+    sponsors = requests.get('https://v4.gh-proxy.org/https://github.com/wzyaeu/IfadianSponsorGet/raw/refs/heads/pagedata/output.json').json()
 
     print('init-运行mainpage')
     mainpage()
