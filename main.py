@@ -62,27 +62,29 @@ def mainpage():
     load_template('mainpage/visablebox_foot')
 
     all_date_data = []
-    count = 12
-    default = 1
+    count = 14
     output = ''
     print('mainpage-构建页面')
     print(f'mainpage-获取api数据')
     alldate_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily/history?page_size={count}').json()['items']
     start_day = get_previous_days(alldate_data[0]['date'], count)
     print(start_day)
-    for index in range(0, count):
-        date_data = alldate_data[index]
-        print(f'mainpage-构建页面-{index}/{count} {date_data['date']}')
+    for index in range(0, count+1):
+        default = index == count
+        if default:
+            date_data = alldate_data[0]
+            index = 0
+        else:
+            date_data = alldate_data[index]
         output += replaces(templates['mainpage/imagebox'],{
             'visable': ''.join([replaces(templates['mainpage/visablebox'],{
                 'date': d
-            }) for d in start_day if d != date_data['date']]),
-            'visable-foot': ''.join([templates['mainpage/visablebox_foot']]*(count-1)),
-            'page_default':'Visible' if index != default-1 else 'Collapsed',
+            }) for d in start_day]) if default else '',
+            'visable-foot': ''.join([templates['mainpage/visablebox_foot']]*count) if default else '',
+            'visdefault': 'Visible' if default else 'Collapsed',
             'img':escape_xaml(date_data['image_url_1080']),
             'img_4k':escape_xaml(date_data['image_url_4k']),
             'title':escape_xaml(date_data['title']),
-            'cdate':escape_xaml(date_data['date'])  if index != default-1 else 'Default',
             'date':escape_xaml(date_data['date']),
             'sub-title':escape_xaml(date_data.get('headline', date_data.get('subtitle', date_data['title']))),
             'desc':escape_xaml(date_data.get('description', '')),
