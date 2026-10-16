@@ -70,11 +70,11 @@
                                 <local:CustomEventService.Events>
                                     <local:CustomEventCollection>
                                         <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap|Wrap"/>
+                                                           Data="PCLWallpaperPage-Today-DescWrap|Wrap|-"/>
                                         <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Collapsed"/>
+                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Collapsed|-"/>
                                         <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Visible"/>
+                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Visible|-"/>
                                         <local:CustomEvent Type="刷新页面"
                                                            Data="-"/>
                                     </local:CustomEventCollection>
@@ -87,11 +87,11 @@
                                 <local:CustomEventService.Events>
                                     <local:CustomEventCollection>
                                         <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap|NoWrap"/>
+                                                           Data="PCLWallpaperPage-Today-DescWrap|NoWrap|-"/>
                                         <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Visible"/>
+                                                           Data="PCLWallpaperPage-Today-DescWrap-Wrap|Visible|-"/>
                                         <local:CustomEvent Type="修改变量"
-                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Collapsed"/>
+                                                           Data="PCLWallpaperPage-Today-DescWrap-NoWrap|Collapsed|-"/>
                                         <local:CustomEvent Type="刷新页面"
                                                            Data="-"/>
                                     </local:CustomEventCollection>
@@ -147,11 +147,11 @@
                                     <local:CustomEventService.Events>
                                         <local:CustomEventCollection>
                                             <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-False|Visible"/>
+                                                               Data="PCLWallpaperPage-Today-HideText-False|Visible|-"/>
                                             <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-True|Collapsed"/>
+                                                               Data="PCLWallpaperPage-Today-HideText-True|Collapsed|-"/>
                                             <local:CustomEvent Type="修改变量"
-                                                               Data="PCLWallpaperPage-Today-HideText-UI|Right"/>
+                                                               Data="PCLWallpaperPage-Today-HideText-UI|Right|-"/>
                                             <local:CustomEvent Type="刷新页面"
                                                                Data="-"/>
                                         </local:CustomEventCollection>
@@ -172,11 +172,11 @@
                         <local:CustomEventService.Events>
                             <local:CustomEventCollection>
                                 <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-False|Collapsed"/>
+                                                   Data="PCLWallpaperPage-Today-HideText-False|Collapsed|-"/>
                                 <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-True|Visible"/>
+                                                   Data="PCLWallpaperPage-Today-HideText-True|Visible|-"/>
                                 <local:CustomEvent Type="修改变量"
-                                                   Data="PCLWallpaperPage-Today-HideText-UI|Stretch"/>
+                                                   Data="PCLWallpaperPage-Today-HideText-UI|Stretch|-"/>
                                 <local:CustomEvent Type="刷新页面"
                                                    Data="-"/>
                             </local:CustomEventCollection>
