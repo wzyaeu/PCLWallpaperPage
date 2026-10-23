@@ -4,6 +4,10 @@ PCL Wallpaper Page主页仓库。
 
 ## 使用
 
+### 使用预设
+
+现已上架PCL预设，前往`设置->个性化->主页`，选择预设`Wallpaper 每日壁纸`。
+
 ### 使用链接
 
 前往`设置->个性化->主页`，输入联网下载地址`https://wallpaper.p.kaphia.top`。
