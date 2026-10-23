@@ -54,6 +54,7 @@ def mainpage():
     print('mainpage-开始')
     print('mainpage-加载模板')
     load_template('mainpage')
+    load_template('sponsors')
     load_template('mainpage/imagebox')
     load_template('mainpage/left_btn')
     load_template('mainpage/right_btn')
@@ -68,7 +69,6 @@ def mainpage():
     print(f'mainpage-获取api数据')
     alldate_data = requests.get(f'https://uapis.cn/api/v1/image/bing-daily/history?page_size={count}').json()['items']
     start_day = get_previous_days(alldate_data[0]['date'], count)
-    print(start_day)
     for index in range(0, count+1):
         default = index == count
         if default:
